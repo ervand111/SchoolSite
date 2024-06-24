@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import {news} from "@/utility/db";
-import SmallItem from "@/components/events/smallitem";
+import SmallItem from "@/components/events/smallItem";
 import App from "@/components/layouts/app";
 import events from "@/pages/events/index";
 
