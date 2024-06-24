@@ -2,32 +2,296 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.slick-next, .slick-prev {
+    object-fit: contain;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.carousel-images {
+    height: 80vh;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.slider {
+    width: 100%;
+    height: 300px;
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.images-event {
+    height: 250px;
+}
+
+.images-event img {
+    height: 200px;
+}
+
+.slider button {
+    background-color: black;
+}
+
+.slider div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.group {
+    display: none;
+}
+
+header div ul li:hover .group {
+    display: block;
+}
+
+.group li:hover {
+    background-color: #e0dddd;
+}
+
+.dropDown-children {
+    width: 200px;
+    display: none;
+}
+.item1{
+    height: 800px;
+}
+.expanded {
+    height: 300px;
+    overflow: hidden;
+}
+.group1 button{
+    z-index: 1;
+}
+.group li:hover .dropDown-children {
+    display: block;
+}
+
+input::placeholder {
+    color: #a0aec0; /* Your desired placeholder color */
+}
+
+.cube {
+    background-color: #711610FF;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination button {
+    background-color: #e5af64; /* Adjust based on your design */
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #4c8bf5;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.personX {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.personX:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.personX img {
+    filter: grayscale(50%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.personX:hover img {
+    filter: none;
+    transform: scale(1.1);
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+}
+
+.text-group {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    background: rgba(80, 80, 80, 0.59);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+}
+
+.wrapper::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@media only screen and (max-width: 1200px) {
+    header {
+        width: 90%;
+    }
+
+    .info {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .info li {
+        font-size: 10px;
+    }
+    .discover{
+        width:auto;
+        height:auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .contact{
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact div{
+        width: 80%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .contact div p{
+        font-size: 14px;
+    }
+
+    .contact1{
+        width:60%;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .form{
+        width: 100%;
+        background-color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact1 img{
+        display: none;
+    }
+    .forms{
+       margin: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1050px) {
+    header {
+        width: 40%;
+    }
+
+    .rowheader {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: red;
+    }
+
+    .info {
+        display: none;
+    }
+
+    .info li {
+        font-size: 10px;
+    }
+    .text-group{
+        margin: auto;
+        font-size: 20px;
+        text-align: center;
+    }
+
 }
