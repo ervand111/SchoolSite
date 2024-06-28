@@ -6,7 +6,7 @@ import EventItem from "@/components/events/eventItem";
 const Activity = () => {
   return (
     <App>
-      <div className="w-11/12 m-auto mb-20">
+      <div className="w-11/12 m-auto mb-20 activity">
         <h2 className='text-center text-amber-900 p-8 tracking-wider animate-fade-in-up text-4xl '>
           Գ․ Էմինի անվան թիվ 182 ավագ դպրոցի գործունեությունը
         </h2>

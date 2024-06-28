@@ -6,13 +6,13 @@ const History = () => {
   return (
     <div>
       <App>
-        <div className="container mx-auto mb-20 animate-fade-in-up">
+        <div className="container mx-auto mb-20 animate-fade-in-up history">
           <h2 className='text-center text-amber-900 py-10 tracking-wider text-4xl '>
             Գ․Էմինի անվան թիվ 182 ավագ դպրոցի պատմությունը
           </h2>
         </div>
 
-        <div className='w-11/12 m-auto h-auto'>
+        <div className='w-11/12 m-auto h-auto historyText'>
           <div className='container mx-auto flex flex-wrap mb-8 animate-fade-in-up'>
             <div className='w-full lg:w-2/3 p-4'>
               <p className='font-serif text-lg leading-8 text-gray-900'>

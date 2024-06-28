@@ -1,13 +1,14 @@
 import React from 'react';
+import Image from "next/image";
 
 const SmallItem = () => {
   return (
-    <div className='w-full h-32  flex flex-wrap pb-4 justify-between'>
+    <div className='w-full h-32  flex flex-wrap pb-4 justify-between smallItem'>
       <div className='w-3/12 h-full'>
-        <img className='w-full h-full  object-cover' src="/1.jpg" width={100} height={100} alt=""/>
+        <Image className='w-full h-full  object-cover' src="/1.jpg" width={100} height={100} alt=""/>
       </div>
-      <div className='w-9/12 pl-4 h-full'>
-        <p className='font-bold text-start'>
+      <div className='w-9/12 pl-4 h-full smallItemPtext'>
+        <p className='font-bold text-start '>
           ՀԵՀ-ն ինտեգրվեց EBSCO համակարգին
         </p>
       </div>

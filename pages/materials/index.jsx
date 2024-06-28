@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <div>
       <App>
-        <div className='w-11/12 mx-auto p-10'>
+        <div className='w-11/12 mx-auto p-10 materialsParent'>
           <div className='w-full text-center'>
             <h2 className='text-amber-900 text-4xl py-5 tracking-wider animate-fade-in-up'>
               Փաստաթղթեր

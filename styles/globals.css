@@ -51,16 +51,20 @@ header div ul li:hover .group {
     width: 200px;
     display: none;
 }
-.item1{
+
+.item1 {
     height: 800px;
 }
+
 .expanded {
     height: 300px;
     overflow: hidden;
 }
-.group1 button{
+
+.group1 button {
     z-index: 1;
 }
+
 .group li:hover .dropDown-children {
     display: block;
 }
@@ -206,16 +210,35 @@ input::placeholder {
 .animate-fadeIn {
     animation: fadeIn 2s ease-in-out;
 }
-.slick-slide img{
+
+.slick-slide img {
     margin: auto;
 }
-.menuBars{
+
+.menuBars {
     display: none;
 }
+
 @media only screen and (max-width: 1200px) {
-    .footer-menu, .contact-image{
+    .footer{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-menu, .contact-image {
         display: none;
     }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     header {
         width: 100%;
     }
@@ -229,14 +252,16 @@ input::placeholder {
     .info li {
         font-size: 10px;
     }
-    .discover{
-        width:auto;
-        height:auto;
+
+    .discover {
+        width: auto;
+        height: auto;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .contact{
+
+    .contact {
         width: 50%;
         height: auto;
         display: flex;
@@ -245,40 +270,46 @@ input::placeholder {
         justify-content: center;
         align-items: center;
     }
-    .contact div{
+
+    .contact div {
         width: 80%;
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    .contact div p{
+
+    .contact div p {
         font-size: 14px;
     }
 
-    .contact1{
-        width:60%;
+    .contact1 {
+        width: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .form{
+
+    .form {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .contact1 img{
+
+    .contact1 img {
         display: none;
     }
-    .forms{
-       margin: auto;
+
+    .forms {
+        margin: auto;
     }
 
 }
 
 @media only screen and (max-width: 1050px) {
-    .menuBars{
+    .menuBars {
         display: block;
     }
+
     header {
         width: 40%;
     }
@@ -296,7 +327,8 @@ input::placeholder {
     .info li {
         font-size: 10px;
     }
-    .text-group{
+
+    .text-group {
         margin: auto;
         font-size: 20px;
         text-align: center;
@@ -304,40 +336,309 @@ input::placeholder {
 
 }
 
-@media  only screen and (max-width: 550px) {
-    .discover p{
+@media only screen and (max-width: 550px) {
+    .newsNameFirst p,h1{
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+    .newsNameFirst div{
+        margin: 5px;
+        padding: 5px;
+    }
+    .newsNameFirst{
+        width: 100%;
+
+    }
+    .newsName{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+    .smallItemPtext{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .smallItemParent{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .smallItem{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .eventFirst p{
+        padding: 0;
+
+    }
+    .eventFirst{
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .eventName{
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .student{
+        padding: 0;
+    }
+    .student h2{
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    .studentImg{
+        margin-bottom: 20px;
+    }
+    .parentalAdvice{
+        padding: 20px;
+    }
+    .parentalAdvice h2{
+        font-size: 24px;
+
+    }
+    .parentalAdviceImg{
+        width: 90%;
+
+    }
+    .parentalAdviceImg p{
+        font-size: 16px;
+
+    }
+    .pedagogic{
+        width: 90%;
+        margin:  auto;
+
+    }
+    .pedagogic h2{
+       font-size: 24px;
+
+    }
+    .pedagogicDiv{
+        width: 90%;
+        margin: auto;
+
+    }
+    .pedagogicText{
+        margin: 0;
+        padding: 0;
+    }
+    .pedagogicChildren{
+        width: 100%;
+        height: 130px;
+        padding: 0;
+
+    }
+    .pedagogicChildren ul li{
+        font-size: 15px;
+    }
+    .history{
+        height: auto;
+        margin: 0;
+    }
+    .history h2{
+        width: 80%;
+        margin: auto;
         font-size: 18px;
     }
-    header{
+    .historyText{
+        border: 1px solid silver;
+        width: 90%;
+
+    }
+    .historyText p{
+        font-size: 14px;
+    }
+    .stuffPatrent {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .stuffPatrent h2 {
+        font-size: 24px;
+    }
+
+    .stuffImage {
+        width: 90%;
+        margin: auto;
+        float: none;
+    }
+
+    .stuffText {
+        width: 100%;
+        margin: 20px auto;
+        height: 250px;
+        overflow-y: scroll;
+    }
+
+    .stuffPerson  {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .stuffPerson p{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .stuffPersons {
+        width: 100%;
+        overflow: hidden;
+        height: 250px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stuffPersons p {
+        font-size: 12px;
+        padding: 0;
+        margin-left: 10px;
+
+    }
+
+    .activity h2 {
+        font-size: 20px;
+    }
+
+    .activity div p {
+        font-size: 16px;
+
+    }
+
+    .materialsParent {
+        width: 100%;
+        font-size: 12px;
+        text-align: start;
+    }
+
+    .materialsParent h2 {
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .graduate h2 {
+        font-size: 18px;
+    }
+
+    .personX {
+        width: 100%;
+        height: 180px;
+        margin-top: 0;
+    }
+
+    .personY {
+        width: auto;
+    }
+
+    .news {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .news img {
+        width: 100%;
+    }
+
+    .news h2 {
+        font-size: 23px;
+        padding: 14px;
+    }
+
+    .news p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .event {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    .event h2 {
+        font-size: 23px;
+        padding: 14px;
+    }
+
+    .event h4 {
+        font-size: 16px;
+    }
+
+    .event img {
+        width: 100%;
+    }
+
+    .discover p {
+        font-size: 18px;
+    }
+
+    header {
         width: 100%;
         height: auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .menuBars{
+
+    .menuBars {
         width: 20%;
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
     }
-    .logo{
+
+    .logo {
         width: 180px;
         height: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .iconsParent{
+
+    .iconsParent {
         width: 30%;
         display: flex;
         justify-content: end;
         align-items: center;
     }
-    .iconsParent a{
+
+    .iconsParent a {
         font-size: 25px;
         background: none;
     }
+
     .category {
         margin-bottom: 1rem;
     }
@@ -357,49 +658,70 @@ input::placeholder {
     .sub-sub-category {
         margin-bottom: 0.25rem;
     }
-    footer{
-        height: auto;
-    }
-    .spanDiv {
+
+    .footer{
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
+        flex-direction: column;
     }
-    .contactTExt h2{
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .spanDiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactTExt h2 {
         margin: 0;
         padding: 0;
     }
-    .formParent{
+
+    .formParent {
         margin: auto;
     }
-    .contact{
+
+    .contact {
         width: 70%;
     }
-    .contact1 input{
+
+    .contact1 input {
         height: 30px;
     }
-    .formItem button{
+
+    .formItem button {
         padding: 15px;
     }
-    .contact div:first-child{
+
+    .contact div:first-child {
         padding-bottom: 0;
     }
-    .contact div:last-child{
+
+    .contact div:last-child {
         padding-top: 0;
     }
-    .contact div{
+
+    .contact div {
         width: 100%;
         padding: 20px;
     }
 
-    .contact1{
+    .contact1 {
         width: 90%;
         height: auto;
         margin-bottom: 20px;
         margin-top: 20px;
 
     }
+
     .carousel-images {
         height: 40vh;
         width: 95%;
@@ -408,15 +730,17 @@ input::placeholder {
         margin-bottom: 20px;
 
     }
-    .wrapper{
+
+    .wrapper {
         font-size: 14px;
         text-align: center;
     }
 
-    .discoverText{
+    .discoverText {
         margin-top: 10px;
     }
-    .discover{
+
+    .discover {
         height: auto;
         width: 95%;
         overflow: hidden;
@@ -425,13 +749,14 @@ input::placeholder {
         align-items: center;
         flex-wrap: wrap;
     }
-    .discover  div{
+
+    .discover div {
     }
-    .discover div:hover{
+
+    .discover div:hover {
         scale: none;
 
     }
-
 
 
 }

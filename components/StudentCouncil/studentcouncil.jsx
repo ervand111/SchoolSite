@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const Student = () => {
   return (
-    <div className='w-full h-screen bg-gradient-to-b from-gray-100 to-gray-200'>
-      <div className='py-10'>
+    <div className='w-full h-auto bg-gradient-to-b from-gray-100 to-gray-200'>
+      <div className='py-10 student'>
         <h2 className='text-center text-amber-900 tracking-wider animate-fade-in-up text-4xl'>
           Աշակերտական խորհուրդ
         </h2>
       </div>
       <div className=" mt-12 min-h-96 flex  justify-center items-center">
-        <div className="max-w-6xl bg-white rounded-3xl overflow-hidden shadow-2xl w-full lg:flex transition-transform transform hover:scale-105">
+        <div className="max-w-6xl bg-white studentImg rounded-3xl parentalAdviceImg overflow-hidden shadow-2xl w-full lg:flex transition-transform transform hover:scale-105">
           <div className="w-full lg:w-1/2 relative overflow-hidden">
             <Image
               src="/1.jpg"

@@ -6,7 +6,7 @@ const Person = ({ user }) => {
       <div className='w-full h-full mr-4'>
         <img className='w-full h-full object-cover rounded-2xl' src={user.image} alt={user.info} />
       </div>
-      <div className="w-3/5 h-auto flex flex-col justify-center">
+      <div className="w-3/5 h-auto flex flex-col justify-center personY">
         <h1 className='text-xl ml-5 font-bold text-left mb-4'>{user.info}</h1>
         <p className='text-lg ml-5 text-left'>{user.proffesion}</p>
       </div>

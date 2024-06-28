@@ -6,12 +6,12 @@ import Image from "next/image";
 const Stuff = () => {
   return (
     <App>
-      <div className="w-11/12 m-auto mb-20">
+      <div className="w-11/12 m-auto mb-20 stuffPatrent">
         <h2  className='text-center text-amber-900 mt-10  tracking-wider animate-fade-in-up text-4xl'>Աշխատակազմ</h2>
       </div>
-      <div className='w-full h-auto'>
+      <div className='w-full h-auto stuffPatrent'>
         <div className='w-11/12 h-auto  flex-wrap m-auto  mb-12'>
-          <div className='w-1/4   h-auto p-4 float-left'>
+          <div className='w-1/4   h-auto p-4 float-left stuffImage'>
             <div className='w-full h-auto border-black border  mt-4 flex  items-center flex-col  shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
               <Image
                 class='w-full h-full object-contain  filter drop-shadow-lg transition-transform transform hover:scale-105'
@@ -28,7 +28,7 @@ const Stuff = () => {
               </div>
             </div>
           </div>
-          <div className='w-full p-6 group1   rounded-lg shadow-lg animate-fadeIn'>
+          <div className='w-full p-6 group1   rounded-lg shadow-lg animate-fadeIn stuffText'>
             <p className='leading-7 text-justify  text-gray-700 text-1xl'>
               Ռուզանա Ալավերդյանը ծնվել է 1959թ․ դեկտեմբերի 13֊ին Երևանում։ 1966֊1976թ․֊ին
               սովորել է Երևանի թիվ 50 միջնակարգ դպրոցում։ 1978 - 1983թ.թ.֊ին սովորել է Երևանի Պետական Համալսարանի Հայ
@@ -60,8 +60,8 @@ const Stuff = () => {
 
         </div>
 
-        <div className='w-full flex justify-evenly items-center mb-10'>
-          <div className='w-1/4 h-auto flex justify-center items-center flex-col p-4'>
+        <div className='w-full flex justify-evenly items-center mb-10 stuffPerson'>
+          <div className='w-1/4 h-auto flex justify-center items-center flex-col p-4 stuffPerson'>
           <div
               className='w-full h-auto flex justify-center items-center flex-col bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
               <Image
@@ -82,7 +82,7 @@ const Stuff = () => {
             </div>
           </div>
 
-          <div className='w-1/4 h-auto flex justify-center items-center flex-col p-4'>
+          <div className='w-1/4 h-auto flex justify-center items-center flex-col p-4 stuffPerson'>
             <div
               className='w-full h-auto flex justify-center items-center flex-col bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
               <Image
@@ -105,15 +105,14 @@ const Stuff = () => {
 
         </div>
 
-        <div className='p-10'>
+        <div className='p-10 '>
           <h2 className='text-center text-4xl text-amber-900 font-black animate-fadeIn'>
             Աշխատակազմ
           </h2>
         </div>
       </div>
       <div className='w-full h-auto  flex flex-wrap justify-evenly border-t-2 border-black '>
-        <div
-          className='w-5/12 h-80 m-4 flex justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
+        <div className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
           <div className='w-2/5'>
             <Image
               className='w-full h-80 object-contain filter'
@@ -123,7 +122,7 @@ const Stuff = () => {
               alt='Irina Grigoryan'
             />
           </div>
-          <div className='w-1/2 h-full flex flex-col justify-center text-start'>
+          <div className='w-1/2 h-full flex flex-col justify-center text-start '>
             <p className='p-2 text-2xl font-serif text-gray-800'>Իրինա Ռուդիկի Գրիգորյան</p>
             <p className='p-2 text-xl font-serif text-gray-700'>Տնօրենի պաշտոնակատար</p>
             <p className='p-2 text-lg font-serif text-gray-600'>Քիմիայի ուսուցիչ</p>
@@ -133,7 +132,7 @@ const Stuff = () => {
         </div>
 
         <div
-          className='w-5/12 h-80 m-4 flex justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
+          className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
           <div className='w-2/5 items-center flex'>
             <Image
               className='w-full h-72 object-contain filter'
@@ -143,7 +142,7 @@ const Stuff = () => {
               alt='Irina Grigoryan'
             />
           </div>
-          <div className='w-7/12 h-full flex flex-col justify-center text-start'>
+          <div className='w-7/12 h-full flex  flex-col justify-center text-start'>
             <p className='p-2 text-2xl font-serif text-gray-800'>ՍՈՆԱ ՌԱԶՄԻԿԻ ՂՈՒԿԱՍՅԱՆ</p>
             <p className='p-2 text-xl font-serif text-gray-700'>Փոխտնօրեն</p>
             <p className='p-2 text-lg font-serif text-gray-600'>Մաթեմատիկայի ուսուցիչ</p>
@@ -152,7 +151,7 @@ const Stuff = () => {
           </div>
         </div>
         <div
-          className='w-5/12 h-80 m-4 flex justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
+          className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
           <div className='w-2/5'>
             <Image
               className='w-full h-80 object-contain filter'
@@ -171,7 +170,7 @@ const Stuff = () => {
           </div>
         </div>
         <div
-          className='w-5/12 h-80 m-4 flex justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
+          className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
           <div className='w-2/5'>
             <Image
               className='w-full h-80 object-contain filter'

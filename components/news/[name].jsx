@@ -8,8 +8,8 @@ const Name = () => {
   return (
     <div>
       <App>
-        <div className='w-11/12 h-auto  justify-between flex m-auto'>
-          <div className='w-2/3 h-auto '>
+        <div className='w-11/12 h-auto  justify-between flex m-auto  newsName '>
+          <div className='w-2/3 h-auto newsNameFirst '>
             <div className='w-11/12 m-auto mt-6 mb-10'>
               <h1 className='text-xl italic'>13/06/2024</h1>
             </div>
@@ -39,9 +39,9 @@ const Name = () => {
               </p>
 
             </div>
-            <div className='w-11/12 m-auto h-4 mt-10 '></div>
+
           </div>
-          <div className=' pl-10 w-2/6 h-auto'>
+          <div className=' pl-10 w-2/6 h-auto smallItem'>
             <div className='mt-6 mb-10'>
               <h1 className='text-xl italic'>Վերջին նորությունները</h1>
             </div>

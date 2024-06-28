@@ -5,6 +5,7 @@ import Link from "next/link";
 import {Menu, Dropdown, Button, Drawer} from 'antd';
 import {MenuOutlined} from '@ant-design/icons';
 import {log} from "next/dist/server/typescript/utils";
+import Image from "next/image";
 
 const {SubMenu} = Menu;
 const Header = () => {
@@ -42,7 +43,7 @@ const Header = () => {
 
         <div className="w-full h-full flex  justify-around items-center rowheader ">
           <div className='menuBars'>
-  <span className='text-4xl' onClick={showDrawer}>
+  <span className='text-2xl cursor-pointer' onClick={showDrawer}>
     <MenuOutlined/>
   </span>
             <Drawer
@@ -57,7 +58,9 @@ const Header = () => {
                 {categories.map((category, index) => (
                   <div key={`category-${index}`} className='category'>
                     <Menu.Item onClick={category.drb ? toggleSubMenu : null} key={`category-item-${index}`}>
-                      {category.name}
+                      <Link href={category?.path}>
+                        {category.name}
+                      </Link>
                     </Menu.Item>
                     {category.drb && (
                       <div className='sub-menu'>
@@ -66,8 +69,7 @@ const Header = () => {
                             {category.drb.map((item, index) => (
                               <div key={`item-${index}`} className='sub-category'>
                                 <Menu.Item onClick={item.drb ? toggleSubMenu2 : null} key={`sub-item-${index}`}>
-                                  {/*{console.log(item)}*/}
-                                    <Link href={item?.path}> {item.label}</Link>
+                                  <Link href={item?.path}> {item.label}</Link>
                                 </Menu.Item>
                                 {item.drb && (
                                   <div className='sub-menu'>
@@ -97,7 +99,7 @@ const Header = () => {
           </div>
           <div className='w-52  h-5/6 flex justify-center  logo '>
             <Link href='/' className='w-full h-full'>
-              <img className='w-full h-full  object-contain' src="/logo.png" width={1000} height={1000} alt=""/>
+              <Image className='w-full h-full  object-contain' src="/logo.png" width={1000} height={1000} alt=""/>
             </Link>
           </div>
           <div className="w-9/11 ml-5 h-full relative flex justify-center  items-center info">
