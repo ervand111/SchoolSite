@@ -22,10 +22,10 @@ export const categories = [
     path: "/",
     drb: [
       {id: 1, label: "Գործունեություն", path: "/activity"},
-      {id: 2, label: "Աշխատակազմ",path:'/stuff'},
-      {id: 3, label: "Պատմություն",path:'/history'},
+      {id: 2, label: "Աշխատակազմ",path: '/stuff'},
+      {id: 3, label: "Պատմություն",path: '/history'},
       {
-        id: 4, label: "Խորհուրդներ", drb: [
+        id: 4, label: "Խորհուրդներ", path:"", drb: [
           {label:"Մանկավարժական",path:"/pedagogic"},
           {label:"Ծնողական",path: "/parentalAdvice"},
           {label:"Աշակերտական",path: "/students"},
@@ -34,42 +34,42 @@ export const categories = [
     ]
   },
   {
-    id: 3,
+    id: 5,
     label: 'Events',
     icon: <CaretDownOutlined/>,
     name: "Միջոցառումներ",
     path: "events"
   },
   {
-    id: 3,
+    id: 6,
     label: 'Events',
     icon: <CaretDownOutlined/>,
     name: "Ձեռքբերումներ",
     path: "/achievements"
   },
   {
-    id: 6,
+    id: 7,
     label: 'News',
     path: "news",
     icon: <CaretDownOutlined/>,
     name: "Նորություններ"
   },
   {
-    id: 4,
+    id: 8,
     label: 'Teachers',
     path: "/graduate",
     icon: <CaretDownOutlined/>,
     name: "Շրջանավարտներ"
   },
   {
-    id: 5,
+    id: 9,
     label: 'Gallery',
     path: "/materials",
     icon: <CaretDownOutlined/>,
     name: "Նյութեր"
   },
   {
-    id: 7,
+    id: 10,
     label: 'Contact',
     path: "contact",
     icon: <CaretDownOutlined/>,

@@ -305,6 +305,39 @@ input::placeholder {
 }
 
 @media  only screen and (max-width: 550px) {
+    .discover p{
+        font-size: 18px;
+    }
+    header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menuBars{
+        width: 20%;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+    }
+    .logo{
+        width: 180px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .iconsParent{
+        width: 30%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    .iconsParent a{
+        font-size: 25px;
+        background: none;
+    }
     .category {
         margin-bottom: 1rem;
     }
@@ -348,6 +381,12 @@ input::placeholder {
     }
     .formItem button{
         padding: 15px;
+    }
+    .contact div:first-child{
+        padding-bottom: 0;
+    }
+    .contact div:last-child{
+        padding-top: 0;
     }
     .contact div{
         width: 100%;

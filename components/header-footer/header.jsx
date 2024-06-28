@@ -4,6 +4,7 @@ import {CaretRightOutlined} from "@ant-design/icons";
 import Link from "next/link";
 import {Menu, Dropdown, Button, Drawer} from 'antd';
 import {MenuOutlined} from '@ant-design/icons';
+import {log} from "next/dist/server/typescript/utils";
 
 const {SubMenu} = Menu;
 const Header = () => {
@@ -65,7 +66,8 @@ const Header = () => {
                             {category.drb.map((item, index) => (
                               <div key={`item-${index}`} className='sub-category'>
                                 <Menu.Item onClick={item.drb ? toggleSubMenu2 : null} key={`sub-item-${index}`}>
-                                  {item.label}
+                                  {/*{console.log(item)}*/}
+                                    <Link href={item?.path}> {item.label}</Link>
                                 </Menu.Item>
                                 {item.drb && (
                                   <div className='sub-menu'>
@@ -74,7 +76,7 @@ const Header = () => {
                                         {item.drb.map((subItem, index) => (
                                           <div key={`sub-item-${index}`} className='sub-sub-category'>
                                             <Menu.Item key={`sub-sub-item-${index}`}>
-                                              {subItem.label}
+                                              <Link href={subItem?.path}> {subItem.label}</Link>
                                             </Menu.Item>
                                           </div>
                                         ))}
@@ -104,7 +106,7 @@ const Header = () => {
                 <li
                   className="text-sm  ml-5 p-2 flex items-end hover:text-slate-500 cursor-pointer relative"
                   key={category.id}>
-                  <Link href={category.path}>
+                  <Link href={category?.path}>
                     {category.name}
                   </Link>
                   {category.drb ?
@@ -145,7 +147,7 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          <div className="w-24 h-1/2 flex items-center">
+          <div className="w-24 h-1/2 flex items-center iconsParent">
             {icons.map((icon) => (
               <a
                 className="text-3xl p-2 mr-2 text-gray-800 animate-pulse hover:text-blue-600 transition-colors duration-300 rounded-full bg-gray-200 hover:bg-gray-300"
