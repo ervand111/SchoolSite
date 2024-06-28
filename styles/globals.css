@@ -205,10 +205,15 @@ input::placeholder {
 .animate-fadeIn {
     animation: fadeIn 2s ease-in-out;
 }
-
+.slick-slide img{
+    margin: auto;
+}
 @media only screen and (max-width: 1200px) {
+    .footer-menu, .contact-image{
+        display: none;
+    }
     header {
-        width: 90%;
+        width: 100%;
     }
 
     .info {
@@ -247,15 +252,12 @@ input::placeholder {
 
     .contact1{
         width:60%;
-        background-color: red;
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
     .form{
         width: 100%;
-        background-color: yellow;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -274,11 +276,10 @@ input::placeholder {
         width: 40%;
     }
 
-    .rowheader {
+    header .rowheader {
         width: 100%;
         display: flex;
         justify-content: center;
-        background-color: red;
     }
 
     .info {
@@ -293,5 +294,20 @@ input::placeholder {
         font-size: 20px;
         text-align: center;
     }
+
+}
+
+@media  only screen and (max-width: 550px) {
+    .contact{
+        width: 70%;
+    }
+    .contact div{
+        width: 100%;
+        padding: 20px;
+    }
+    .contact1{
+        width: 90%;
+    }
+
 
 }

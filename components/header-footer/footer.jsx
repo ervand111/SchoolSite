@@ -14,7 +14,7 @@ const Footer = () => {
           <div
             className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mb-6 md:mb-0 text-center md:text-left">
             <div className="w-9/11 ml-5 h-full relative flex justify-center  items-center">
-              <ul className="flex w-full h-full justify-center items-center">
+              <ul className="flex w-full h-full justify-center items-center footer-menu">
 
                 {categories.map((category) => (
                   <li

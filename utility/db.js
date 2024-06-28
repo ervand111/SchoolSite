@@ -21,10 +21,16 @@ export const categories = [
     name: "Մեր Մասին",
     path: "/",
     drb: [
-      {id: 1, label: "Test", path: "activity"},
-      {id: 2, label: "Test"},
-      {id: 3, label: "Test"},
-      {id: 4, label: "Test"},
+      {id: 1, label: "Գործունեություն", path: "activity"},
+      {id: 2, label: "Աշխատակազմ"},
+      {id: 3, label: "Պատմություն"},
+      {
+        id: 4, label: "Խորհուրդներ", drb: [
+          {label:"Մանկավարժական"},
+          {label:"Ծնողական"},
+          {label:"Աշակերտական"},
+        ]
+      },
     ]
   },
   {

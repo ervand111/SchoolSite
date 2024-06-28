@@ -62,7 +62,7 @@ const Contact = () => {
             initialValues={{remember: true}}
             onFinish={onFinish}
             onFinishFailed={onFinishFailed}
-            className='w-3/4  h-full  flex justify-start items-center flex-wrap form  '
+            className='w-3/4  h-full  flex justify-start items-center flex-wrap'
           >
             <Form.Item className='w-11/12  mt-4'
                        name="fullName"
@@ -125,7 +125,7 @@ const Contact = () => {
             </Form.Item>
           </Form>
         </div>
-        <div className='w-1/3 h-4/6 '>
+        <div className='w-1/3 h-4/6 contact-image'>
           <Image src="/school.webp" alt="children" className='w-full h-full object-cover object-top ' width={1000}
                  height={1000}></Image>
 

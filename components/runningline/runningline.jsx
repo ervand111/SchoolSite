@@ -11,7 +11,27 @@ const Running = (props) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
-    arrows:false
+    arrows:false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
   };
 
   return (

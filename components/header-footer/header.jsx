@@ -1,15 +1,98 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {categories, icons} from "@/utility/db";
 import {CaretRightOutlined} from "@ant-design/icons";
 import Link from "next/link";
+import {Menu, Dropdown, Button, Drawer} from 'antd';
+import {MenuOutlined} from '@ant-design/icons';
+// import 'antd/dist/antd.css'; // Import Ant Design styles
 
+const {SubMenu} = Menu;
 const Header = () => {
+  const [drawerVisible, setDrawerVisible] = useState(false);
+  const [subMenuVisible, setSubMenuVisible] = useState(false);
+  const [subMenuVisible1, setSubMenuVisible1] = useState(false);
+
+  const showDrawer = () => {
+    setDrawerVisible(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerVisible(false);
+    setSubMenuVisible(false);
+    setSubMenuVisible1(false);
+  };
+
+  const toggleSubMenu = () => {
+    setSubMenuVisible(!subMenuVisible);
+  };
+  const toggleSubMenu2 = () => {
+    setSubMenuVisible1(!subMenuVisible1);
+  };
+  const menu = (
+    <Menu>
+      <SubMenu title="First Menu">
+        <Menu.Item>Option 1</Menu.Item>
+        <Menu.Item>Option 2</Menu.Item>
+        <Menu.Item>Option 3</Menu.Item>
+      </SubMenu>
+      <Menu.Item>Second Menu</Menu.Item>
+      <Menu.Item>Third Menu</Menu.Item>
+    </Menu>
+  );
   return (
     <>
-      <header  className="w-full h-32  flex justify-center items-center border-b border-black" >
+      <header className="w-full h-32  flex justify-center items-center border-b border-black">
 
         <div className="w-full h-full flex  justify-around items-center rowheader ">
+          <div>
+            <span className='text-4xl' onClick={showDrawer}>
+              <MenuOutlined/>
+            </span>
+            <Drawer
+              title="Menu"
+              placement="right"
+              closable={true}
+              onClose={closeDrawer}
+              visible={drawerVisible}
+            >
+              <Menu mode="inline">
 
+                {categories.map((category, index) => (
+                  <>
+                    <Menu.Item onClick={category.drb ? toggleSubMenu : null} key={index}>{category.name}</Menu.Item>
+                    {category.drb ?
+                      <>
+                        {subMenuVisible && (
+                          <Menu mode="vertical">
+                            {category.drb.map((item, index) => (
+                              <>
+                                <Menu.Item onClick={item.drb ? toggleSubMenu2 : null}
+                                           key={index}>{item.label}</Menu.Item>
+                                {item.drb ?
+                                  <>
+                                    {subMenuVisible1 && (
+                                      <Menu mode="vertical">
+                                        {item.drb.map((subItem, index) => (
+                                          <>
+                                            <Menu.Item key={index}>{subItem.label}</Menu.Item>
+                                          </>
+                                        ))}
+                                      </Menu>
+                                    )
+                                    }
+                                  </>
+                                  : null}
+                              </>
+                            ))}
+                          </Menu>
+                        )}
+                      </>
+                      : null}
+                  </>
+                ))}
+              </Menu>
+            </Drawer>
+          </div>
           <div className='w-52  h-5/6 flex justify-center  logo '>
             <Link href='/' className='w-full h-full'>
               <img className='w-full h-full  object-contain' src="/logo.png" width={1000} height={1000} alt=""/>
@@ -17,7 +100,6 @@ const Header = () => {
           </div>
           <div className="w-9/11 ml-5 h-full relative flex justify-center  items-center info">
             <ul className="flex w-full h-full justify-center items-center">
-
               {categories.map((category) => (
                 <li
                   className="text-sm  ml-5 p-2 flex items-end hover:text-slate-500 cursor-pointer relative"
@@ -48,7 +130,7 @@ const Header = () => {
                                 <li className="p-2">Մանկավարժական</li>
                               </Link>
                               <Link href='/parentalAdvice'>
-                              <li className="p-2">Ծնողական</li>
+                                <li className="p-2">Ծնողական</li>
                               </Link>
                               <Link href='/students'>
                                 <li className="p-2">Աշակերտական</li>
@@ -63,7 +145,6 @@ const Header = () => {
               ))}
             </ul>
           </div>
-
           <div className="w-24 h-1/2 flex items-center">
             {icons.map((icon) => (
               <a
@@ -80,7 +161,8 @@ const Header = () => {
         </div>
       </header>
     </>
-  );
+  )
+    ;
 };
 
 export default Header;
