@@ -8,6 +8,7 @@
 
 .carousel-images {
     height: 80vh;
+
 }
 
 .slider {
@@ -208,6 +209,9 @@ input::placeholder {
 .slick-slide img{
     margin: auto;
 }
+.menuBars{
+    display: none;
+}
 @media only screen and (max-width: 1200px) {
     .footer-menu, .contact-image{
         display: none;
@@ -272,6 +276,9 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 1050px) {
+    .menuBars{
+        display: block;
+    }
     header {
         width: 40%;
     }
@@ -298,16 +305,94 @@ input::placeholder {
 }
 
 @media  only screen and (max-width: 550px) {
+    .category {
+        margin-bottom: 1rem;
+    }
+
+    .sub-menu {
+        margin-left: 1rem;
+        border-left: 1px solid #ccc;
+        padding-left: 0.5rem;
+
+    }
+
+    .sub-category {
+        margin-bottom: 0.5rem;
+
+    }
+
+    .sub-sub-category {
+        margin-bottom: 0.25rem;
+    }
+    footer{
+        height: auto;
+    }
+    .spanDiv {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .contactTExt h2{
+        margin: 0;
+        padding: 0;
+    }
+    .formParent{
+        margin: auto;
+    }
     .contact{
         width: 70%;
+    }
+    .contact1 input{
+        height: 30px;
+    }
+    .formItem button{
+        padding: 15px;
     }
     .contact div{
         width: 100%;
         padding: 20px;
     }
+
     .contact1{
         width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
     }
+    .carousel-images {
+        height: 40vh;
+        width: 95%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+    }
+    .wrapper{
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .discoverText{
+        margin-top: 10px;
+    }
+    .discover{
+        height: auto;
+        width: 95%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .discover  div{
+    }
+    .discover div:hover{
+        scale: none;
+
+    }
+
 
 
 }

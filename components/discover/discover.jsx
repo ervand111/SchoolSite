@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Discover = () => {
   return (
-    <div className="w-full h-auto flex justify-around flex-wrap ">
-      <div className="w-full">
+    <div className="w-full h-auto flex justify-around flex-wrap  ">
+      <div className="w-full discoverText ">
         <h1 className="text-center text-3xl animate-fadeIn">Խորհուրդներ</h1>
       </div>
 

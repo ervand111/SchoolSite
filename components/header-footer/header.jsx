@@ -4,7 +4,6 @@ import {CaretRightOutlined} from "@ant-design/icons";
 import Link from "next/link";
 import {Menu, Dropdown, Button, Drawer} from 'antd';
 import {MenuOutlined} from '@ant-design/icons';
-// import 'antd/dist/antd.css'; // Import Ant Design styles
 
 const {SubMenu} = Menu;
 const Header = () => {
@@ -31,12 +30,9 @@ const Header = () => {
   const menu = (
     <Menu>
       <SubMenu title="First Menu">
-        <Menu.Item>Option 1</Menu.Item>
-        <Menu.Item>Option 2</Menu.Item>
-        <Menu.Item>Option 3</Menu.Item>
+
       </SubMenu>
-      <Menu.Item>Second Menu</Menu.Item>
-      <Menu.Item>Third Menu</Menu.Item>
+
     </Menu>
   );
   return (
@@ -44,51 +40,55 @@ const Header = () => {
       <header className="w-full h-32  flex justify-center items-center border-b border-black">
 
         <div className="w-full h-full flex  justify-around items-center rowheader ">
-          <div>
-            <span className='text-4xl' onClick={showDrawer}>
-              <MenuOutlined/>
-            </span>
+          <div className='menuBars'>
+  <span className='text-4xl' onClick={showDrawer}>
+    <MenuOutlined/>
+  </span>
             <Drawer
               title="Menu"
               placement="right"
               closable={true}
               onClose={closeDrawer}
               visible={drawerVisible}
-            >
-              <Menu mode="inline">
 
+            >
+              <Menu mode="inline" className='main-menu'>
                 {categories.map((category, index) => (
-                  <>
-                    <Menu.Item onClick={category.drb ? toggleSubMenu : null} key={index}>{category.name}</Menu.Item>
-                    {category.drb ?
-                      <>
+                  <div key={`category-${index}`} className='category'>
+                    <Menu.Item onClick={category.drb ? toggleSubMenu : null} key={`category-item-${index}`}>
+                      {category.name}
+                    </Menu.Item>
+                    {category.drb && (
+                      <div className='sub-menu'>
                         {subMenuVisible && (
                           <Menu mode="vertical">
                             {category.drb.map((item, index) => (
-                              <>
-                                <Menu.Item onClick={item.drb ? toggleSubMenu2 : null}
-                                           key={index}>{item.label}</Menu.Item>
-                                {item.drb ?
-                                  <>
+                              <div key={`item-${index}`} className='sub-category'>
+                                <Menu.Item onClick={item.drb ? toggleSubMenu2 : null} key={`sub-item-${index}`}>
+                                  {item.label}
+                                </Menu.Item>
+                                {item.drb && (
+                                  <div className='sub-menu'>
                                     {subMenuVisible1 && (
                                       <Menu mode="vertical">
                                         {item.drb.map((subItem, index) => (
-                                          <>
-                                            <Menu.Item key={index}>{subItem.label}</Menu.Item>
-                                          </>
+                                          <div key={`sub-item-${index}`} className='sub-sub-category'>
+                                            <Menu.Item key={`sub-sub-item-${index}`}>
+                                              {subItem.label}
+                                            </Menu.Item>
+                                          </div>
                                         ))}
                                       </Menu>
-                                    )
-                                    }
-                                  </>
-                                  : null}
-                              </>
+                                    )}
+                                  </div>
+                                )}
+                              </div>
                             ))}
                           </Menu>
                         )}
-                      </>
-                      : null}
-                  </>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </Menu>
             </Drawer>

@@ -16,13 +16,12 @@ const Contact = () => {
 
   return (
 
-    <div className='w-full h-auto flex flex-wrap justify-center items-center '>
-      <div className='w-full'>
+    <div className='w-full h-auto flex flex-wrap justify-center items-center  formParent '>
+      <div className='w-full contactTExt'>
         <h2 className='text-center  pt-10 pb-20 tracking-wider animate-fade-in-up text-4xl'>Կապ մեզ հետ</h2>
       </div>
       <div className='w-9/12 h-auto flex  justify-around items-center contact '>
-        <div
-          className='w-1/4 h-52  bg-yellow-400 flex justify-center items-center flex-col transition duration-500  hover:scale-110 hover:bg-yellow-300'>
+        <div className='w-1/4 h-52  bg-yellow-400 flex justify-center items-center flex-col transition duration-500  hover:scale-110 hover:bg-yellow-300'>
           <div className='w-1/2 h-32 flex justify-center items-center '>
             <EnvironmentOutlined className='text-5xl text-white'/>
           </div>
@@ -53,7 +52,7 @@ const Contact = () => {
       <div className='w-10/12 m-auto h-screen flex justify-around items-center contact1'>
         <div className='w-1/2 h-auto bg-blue-100 flex justify-around content-around flex-wrap form'>
           <div className='w-3/4 h-auto'>
-            <p className='text-2xl text-slate-500  font-bold   mt-6'>Կապ մեզ հետ</p>
+            <p className='text-2xl text-slate-500  font-bold  mt-6'>Կապ մեզ հետ</p>
           </div>
           <Form
             form={form}
@@ -118,7 +117,7 @@ const Contact = () => {
               />
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item className='formItem'>
               <Button type="submit" htmlType="submit" className='p-5   flex justify-center  items-center mt-4  bg-green-700  text-white   rounded-full '>
                 Ուղարկել հիմա
               </Button>

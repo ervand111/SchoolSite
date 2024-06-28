@@ -21,14 +21,14 @@ export const categories = [
     name: "Մեր Մասին",
     path: "/",
     drb: [
-      {id: 1, label: "Գործունեություն", path: "activity"},
-      {id: 2, label: "Աշխատակազմ"},
-      {id: 3, label: "Պատմություն"},
+      {id: 1, label: "Գործունեություն", path: "/activity"},
+      {id: 2, label: "Աշխատակազմ",path:'/stuff'},
+      {id: 3, label: "Պատմություն",path:'/history'},
       {
         id: 4, label: "Խորհուրդներ", drb: [
-          {label:"Մանկավարժական"},
-          {label:"Ծնողական"},
-          {label:"Աշակերտական"},
+          {label:"Մանկավարժական",path:"/pedagogic"},
+          {label:"Ծնողական",path: "/parentalAdvice"},
+          {label:"Աշակերտական",path: "/students"},
         ]
       },
     ]

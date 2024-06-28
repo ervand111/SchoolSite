@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <div>
       <footer className="w-full bg-gray-800 text-white py-8">
-        <div className="container mx-auto flex flex-col md:flex-row justify-evenly items-center">
-          <div className="mb-6 md:mb-0 text-center md:text-left">
-            <p className="text-xl font-bold">GeeKlab</p>
-            <p className="text-sm text-gray-400">Made in Armenia</p>
+        <div className="container mx-auto flex flex-col  justify-evenly items-center">
+          <div className="mb-4 h-20  text-center spanDiv ">
+            <span className="text-xl font-bold footerSpan">GeeKlab</span>
+            <p className="text-sm text-gray-400">Կայքը պատրաստված է GeeKlab ընկերության կողմից։ </p>
           </div>
           <div
             className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 mb-6 md:mb-0 text-center md:text-left">
@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="text-center md:text-right">
+          <div className="text-center ">
             <p className="text-sm text-gray-400">2024 Բոլոր իրավունքները պաշտպանված են</p>
           </div>
         </div>
