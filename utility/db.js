@@ -19,7 +19,7 @@ export const categories = [
     label: 'Pages',
     icon: <CaretDownOutlined/>,
     name: "Մեր Մասին",
-    path: "/",
+    path: "#",
     drb: [
       {id: 1, label: "Գործունեություն", path: "/activity"},
       {id: 2, label: "Աշխատակազմ",path: '/stuff'},

@@ -15,14 +15,13 @@ const Pedagogic = () => {
             </h2>
           </div>
 
-          <div className='w-11/12 h-auto flex flex-wrap justify-evenly m-auto items-center pedagogicDiv'>
+          <div className='w-11/12 h-auto flex flex-wrap justify-evenly m-auto  items-center pedagogicDiv'>
             {data.map((item) => (
               <div
                 key={item.id}
-                className='w-2/5 h-60 bg-white pedagogicChildren rounded-lg shadow-lg flex justify-center items-center m-5 p-5 transform transition duration-500 hover:scale-105 hover:shadow-2xl'
+                className='w-2/5 h-60 bg-white  pedagogicChildren rounded-lg shadow-lg flex justify-center items-center m-5 p-5 transform transition duration-500 hover:scale-105 hover:shadow-2xl'
               >
                 <ul className='text-center'>
-
                     <Link href={'/pedagogic/' + item.id}>
                       <li className='text-2xl font-bold text-purple-900 hover:text-purple-700 transition-colors duration-300'>
                         {item.label}
