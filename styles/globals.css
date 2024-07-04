@@ -307,6 +307,22 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 1050px) {
+    .contactTExt h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .formParent {
+        margin: auto;
+    }
+
+    .contact {
+        width: 70%;
+    }
+
+    .contact1 input {
+        height: 30px;
+    }
     .menuBars {
         display: block;
     }
@@ -334,6 +350,507 @@ input::placeholder {
         font-size: 20px;
         text-align: center;
     }
+
+}
+@media only screen and (max-width: 1000px) {
+    .itemPedagonic div img {
+        width: 90%;
+
+    }
+    .itemPedagonic p{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .itemPedagonic div p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .itemPedagonic div {
+        width: calc(100% / 2);
+        height: auto;
+        margin-bottom: 40px;
+    }
+
+    .itemPedagonic {
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .textPedagonic p {
+        font-size: 18px;
+    }
+
+    .textPedagonic {
+        height: 70px;
+        font-size: 14px;
+    }
+
+    .bannerText {
+        font-size: 18px;
+        text-align: center;
+    }
+
+
+    .pedagogicText {
+        width: 90%;
+        height: 100px;
+    }
+
+
+
+    .newsNameFirst p, h1 {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .newsNameFirst div {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .newsNameFirst {
+        width: 100%;
+
+    }
+
+    .newsName {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+    }
+
+    .smallItemPtext {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .smallItemParent {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .smallItem {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .eventFirst p {
+        padding: 0;
+
+    }
+
+    .eventFirst {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .eventName {
+        width: 100%;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .student {
+        padding: 0;
+    }
+
+    .student h2 {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .studentImg {
+        margin-bottom: 20px;
+    }
+
+    .parentalAdvice {
+        padding: 20px;
+    }
+
+    .parentalAdvice h2 {
+        font-size: 24px;
+
+    }
+
+    .parentalAdviceImg {
+        width: 90%;
+
+    }
+
+    .parentalAdviceImg p {
+        font-size: 16px;
+
+    }
+
+    .pedagogic {
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .pedagogic h2 {
+        font-size: 24px;
+
+    }
+
+    .pedagogicDiv {
+        width: 90%;
+        margin: auto;
+
+    }
+
+    .pedagogicText {
+        margin: 0;
+        padding: 0;
+    }
+
+    .pedagogicChildren {
+        width: 100%;
+        height: 130px;
+        padding: 0;
+
+    }
+
+    .pedagogicChildren ul li {
+        font-size: 15px;
+    }
+
+    .history {
+        height: auto;
+        margin: 0;
+    }
+
+    .history h2 {
+        width: 80%;
+        margin: auto;
+        font-size: 18px;
+    }
+
+    .historyText {
+        border: 1px solid silver;
+        width: 90%;
+
+    }
+
+    .historyText p {
+        font-size: 14px;
+    }
+
+    .stuffPatrent {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .stuffPatrent h2 {
+        font-size: 24px;
+    }
+
+    .stuffImage {
+        width: 90%;
+        margin: auto;
+        float: none;
+    }
+
+    .stuffText {
+        width: 100%;
+        margin: 20px auto;
+        height: 250px;
+        overflow-y: scroll;
+    }
+
+    .stuffPerson {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .stuffPerson p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .stuffPersons {
+        width: 100%;
+        overflow: hidden;
+        height: 250px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stuffPersons p {
+        font-size: 12px;
+        padding: 0;
+        margin-left: 10px;
+
+    }
+
+    .activity h2 {
+        font-size: 20px;
+    }
+
+    .activity div p {
+        font-size: 16px;
+
+    }
+
+    .materialsParent {
+        width: 100%;
+        font-size: 12px;
+        text-align: start;
+    }
+
+    .materialsParent h2 {
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .graduate h2 {
+        font-size: 18px;
+    }
+
+    .personX {
+        width: 100%;
+        height: 180px;
+        margin-top: 0;
+    }
+
+    .personY {
+        width: auto;
+    }
+
+    .news {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
+
+    .news img {
+        width: 100%;
+    }
+
+    .news h2 {
+        font-size: 23px;
+        padding: 14px;
+    }
+
+    .news p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .event {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+    }
+
+    .event h2 {
+        font-size: 23px;
+        padding: 14px;
+    }
+
+    .event h4 {
+        font-size: 16px;
+    }
+
+    .event img {
+        width: 100%;
+    }
+
+    .discover p {
+        font-size: 18px;
+    }
+
+    header {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menuBars {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        width: 180px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .iconsParent {
+        width: 30%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .iconsParent a {
+        font-size: 25px;
+        background: none;
+    }
+
+    .category {
+        margin-bottom: 1rem;
+    }
+
+    .sub-menu {
+        margin-left: 1rem;
+        border-left: 1px solid #ccc;
+        padding-left: 0.5rem;
+
+    }
+
+    .sub-category {
+        margin-bottom: 0.5rem;
+
+    }
+
+    .sub-sub-category {
+        margin-bottom: 0.25rem;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .spanDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contactTExt h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .formParent {
+        margin: auto;
+    }
+
+    .contact {
+        width: 70%;
+    }
+
+    .contact1 input {
+        height: 30px;
+    }
+
+    .formItem button {
+        padding: 15px;
+    }
+
+    .contact div:first-child {
+        padding-bottom: 0;
+    }
+
+    .contact div:last-child {
+        padding-top: 0;
+    }
+
+    .contact div {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact1 {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+    }
+
+    .carousel-images {
+        height: 40vh;
+        width: 95%;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 20px;
+
+    }
+
+    .wrapper {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .discoverText {
+        margin-top: 10px;
+    }
+
+    .discover {
+        height: auto;
+        width: 95%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .discover div {
+    }
+
+    .discover div:hover {
+        scale: none;
+
+    }
+
 
 }
 
