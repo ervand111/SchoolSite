@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import App from "@/components/layouts/app";
 import EventItem from "@/components/events/eventItem";
-import {events} from "@/utility/db";
+import {useDispatch, useSelector} from "react-redux";
+import {getEvents} from "@/store/events/actions";
 
 const Index = () => {
+  const dispatch = useDispatch();
+  const events = useSelector(state => state.event.events)
+  useEffect(() => {
+    dispatch(getEvents.request());
+  }, [dispatch]);
   return (
     <div>
       <App>
@@ -11,7 +17,7 @@ const Index = () => {
           <h2 className='text-center text-amber-900 p-10 tracking-wider animate-fade-in-up text-4xl'>Միջոցառումներ</h2>
           <div className='w-11/12 h-auto flex flex-wrap justify-evenly items-start m-auto '>
             {events.map((item) => (
-              <EventItem key={item.id} text={item.text} image={item.image}/>
+              <EventItem key={item.id} text={item.title} image={item.avatar}/>
             ))}
           </div>
         </div>

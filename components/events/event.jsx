@@ -49,7 +49,7 @@ const Event = (props) => {
         <Slider   {...settings}>
           {props.data.map((item) => {
             return (
-              <Item id={item.id} key={item.id} image={item.image} text={item.text}/>
+              <Item id={item.id} key={item.id} image={item.avatar} text={item.title}/>
             );
           })}
         </Slider>

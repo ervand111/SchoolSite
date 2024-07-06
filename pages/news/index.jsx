@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import App from "@/components/layouts/app";
-import Details from "@/components/detalis/detalis.index";
+import Item from "@/components/news/item";
+import {useDispatch, useSelector} from "react-redux";
+import {getLastNews, getNews} from "@/store/news/actions";
 
 const Index = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 19;
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
+  const dispatch = useDispatch();
+  const news = useSelector(state => state.news.news)
+  useEffect(() => {
+    dispatch(getNews.request());
+  }, [dispatch]);
+
 
   return (
     <div>
@@ -20,9 +23,9 @@ const Index = () => {
             </h2>
           </div>
           <div className='w-11/12 h-auto flex flex-wrap justify-evenly items-start m-auto '>
-            {Array.from({length: 9}, (_, index) => (
-              <div className='w-full sm:w-1/2 lg:w-1/3 p-4 news' key={index}>
-                <Details/>
+            {news.map((item) => (
+              <div className='w-full sm:w-1/2 lg:w-1/3 p-4 news' key={item.id}>
+                <Item item={item}/>
               </div>
             ))}
           </div>

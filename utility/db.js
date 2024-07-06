@@ -50,7 +50,7 @@ export const categories = [
   {
     id: 7,
     label: 'News',
-    path: "news",
+    path: "/news",
     icon: <CaretDownOutlined/>,
     name: "Նորություններ"
   },

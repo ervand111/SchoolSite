@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import Image from "next/image";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const Running = (props) => {
   const settings = {
@@ -39,7 +40,7 @@ const Running = (props) => {
       <Slider  {...settings}>
         {props.data.map((item) => (
           <div key={item.id}>
-            <img width={100} height={100} src={item.image} alt={"brands"}/>
+            <Image width={100} height={100}  src={process.env.IMAGE_URL+item.image} alt={"brands"}/>
           </div>
         ))}
       </Slider>

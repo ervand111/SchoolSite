@@ -1,8 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Person from "@/components/graduate/person";
-import {graduate} from "@/utility/db";
+import {useDispatch, useSelector} from "react-redux";
+import {getGraduates} from "@/store/graduates/actions";
 
-const Item = () => {
+const Graduates = () => {
+
+  const dispatch = useDispatch();
+  const graduates = useSelector(state => state.graduate.graduates)
+  useEffect(() => {
+    dispatch(getGraduates.request());
+  }, [dispatch]);
   return (
     <div className='w-full h-auto m-auto graduate'>
       <div className='w-auto h-auto mt-auto p-10'>
@@ -10,9 +17,8 @@ const Item = () => {
       </div>
       <div className='w-11/12 m-auto'>
         <div className='w-full flex flex-wrap justify-evenly childrenGraduate'>
-        {graduate.map((item) => (
+        {graduates?.map((item) => (
           <Person key={item.id} user={item}/>
-
         ))}
         </div>
       </div>
@@ -20,4 +26,4 @@ const Item = () => {
   );
 };
 
-export default Item;
+export default Graduates;

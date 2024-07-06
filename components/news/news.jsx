@@ -51,7 +51,7 @@ const News = (props) => {
         <Slider   {...settings}>
           {props.data.map((item) => {
             return (
-              <Item id={item.id} key={item.id} image={item.image} text={item.text}/>
+              <Item  key={item.id} item={item}/>
             );
           })}
         </Slider>

@@ -1,11 +1,11 @@
 import React from 'react';
 import App from "@/components/layouts/app";
-import Item from "@/components/graduate/item";
+import Graduates from "@/components/graduate/graduates";
 
 const Index = () => {
   return (
     <App>
-      <Item/>
+      <Graduates/>
     </App>
   );
 };
