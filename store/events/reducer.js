@@ -1,11 +1,12 @@
 import { handleActions } from 'redux-actions';
 import {
+  getEvent,
   getEvents,
 } from './actions';
 
 const initialState = {
   events: [],
-  selectedSlide: null,
+  selectedEvent: null,
   isFetching: false,
   isAdding: false,
   isUpdating: false,
@@ -21,6 +22,20 @@ const eventReducer = handleActions(
       isFetching: false,
     }),
     [getEvents.failure]: (state, { payload }) => ({
+      ...state,
+      isFetching: false,
+      error: payload,
+    }),
+    [getEvent.request]: (state) => ({
+      ...state,
+      isFetching: true,
+    }),
+    [getEvent.success]: (state, { payload }) => ({
+      ...state,
+      selectedEvent: payload,
+      isFetching: false,
+    }),
+    [getEvent.failure]: (state, { payload }) => ({
       ...state,
       isFetching: false,
       error: payload,

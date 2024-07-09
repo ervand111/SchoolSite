@@ -5,6 +5,7 @@ import newsReducer from "@/store/news/reducer";
 import brandReducer from "@/store/brands/reducer";
 import achievementReducer from "@/store/achievements/reducer";
 import graduateReducer from "@/store/graduates/reducer";
+import documentReducer from "@/store/documents/reducer";
 
 
 const rootReducer = combineReducers({
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
   brands:brandReducer,
   achievement:achievementReducer,
   graduate:graduateReducer,
+  document:documentReducer
 });
 
 export default rootReducer;

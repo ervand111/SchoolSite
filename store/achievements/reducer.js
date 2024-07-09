@@ -1,7 +1,9 @@
 import { handleActions } from 'redux-actions';
 import {
+  getAchievement,
   getAchievements,
 } from './actions';
+import {getEvent} from "@/store/events/actions";
 
 const initialState = {
   achievements: [],
@@ -21,6 +23,20 @@ const achievementsReducer = handleActions(
       isFetching: false,
     }),
     [getAchievements.failure]: (state, { payload }) => ({
+      ...state,
+      isFetching: false,
+      error: payload,
+    }),
+    [getAchievement.request]: (state) => ({
+      ...state,
+      isFetching: true,
+    }),
+    [getAchievement.success]: (state, { payload }) => ({
+      ...state,
+      selectedEvent: payload,
+      isFetching: false,
+    }),
+    [getAchievement.failure]: (state, { payload }) => ({
       ...state,
       isFetching: false,
       error: payload,

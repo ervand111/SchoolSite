@@ -5,6 +5,7 @@ import {newsSaga} from "@/store/news/saga";
 import {brandSaga} from "@/store/brands/saga";
 import {achievementSaga} from "@/store/achievements/saga";
 import {graduateSaga} from "@/store/graduates/saga";
+import {documentSaga} from "@/store/documents/saga";
 
 function* rootSaga() {
   yield all([
@@ -14,6 +15,7 @@ function* rootSaga() {
     brandSaga(),
     achievementSaga(),
     graduateSaga(),
+    documentSaga(),
   ]);
 }
 

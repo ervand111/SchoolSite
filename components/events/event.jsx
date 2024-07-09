@@ -47,7 +47,7 @@ const Event = (props) => {
       </div>
       <div className='w-11/12 mt-6'>
         <Slider   {...settings}>
-          {props.data.map((item) => {
+          {props?.data?.map((item) => {
             return (
               <Item id={item.id} key={item.id} image={item.avatar} text={item.title}/>
             );

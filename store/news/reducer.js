@@ -2,7 +2,7 @@ import { handleActions } from 'redux-actions';
 import {
   getLastNews,
   getNews,
-  getNewsById
+  getNewsById, getRandNews
 } from './actions';
 
 const initialState = {
@@ -17,6 +17,20 @@ const initialState = {
 
 const newsReducer = handleActions(
   {
+    [getRandNews.request]: (state, { payload }) => ({
+      ...state,
+      isFetching: true,
+    }),
+    [getRandNews.success]: (state, { payload }) => ({
+      ...state,
+      news: payload,
+      isFetching: false,
+    }),
+    [getRandNews.failure]: (state, { payload }) => ({
+      ...state,
+      isFetching: false,
+      error: payload,
+    }),
     [getNews.request]: (state, { payload }) => ({
       ...state,
       isFetching: true,

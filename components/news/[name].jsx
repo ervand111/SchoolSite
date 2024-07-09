@@ -4,7 +4,7 @@ import SmallItem from "@/components/news/smallitem";
 import App from "@/components/layouts/app";
 import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
-import {getNewsById} from "@/store/news/actions";
+import {getNewsById, getRandNews} from "@/store/news/actions";
 import {Skeleton} from "antd";
 
 const Name = () => {
@@ -12,9 +12,11 @@ const Name = () => {
   const {name} = router.query;
   const dispatch = useDispatch();
   const news = useSelector((state) => state?.news?.selectedNews);
+  const randNews = useSelector((state) => state?.news?.news);
   const isFetching = useSelector((state) => state?.news?.isFetching);
   useEffect(() => {
     dispatch(getNewsById.request({id: name}));
+    dispatch(getRandNews.request());
   }, [dispatch, name]);
 
   return (
@@ -46,15 +48,11 @@ const Name = () => {
               <h1 className='text-xl italic'>Վերջին նորությունները</h1>
             </div>
             <Skeleton loading={isFetching} active>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
-              <SmallItem/>
+              <>
+                {randNews?.map((item) => (
+                  <SmallItem key={item.id} item={item}/>
+                ))}
+              </>
             </Skeleton>
           </div>
         </div>

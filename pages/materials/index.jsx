@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import App from "@/components/layouts/app";
 import Link from "next/link";
 import { materials } from "@/utility/db";
+import {useDispatch, useSelector} from "react-redux";
+import {getAchievements} from "@/store/achievements/actions";
+import {getDocuments} from "@/store/documents/actions";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 const Index = () => {
+  const dispatch = useDispatch();
+  const documents = useSelector(state => state.document.documents)
+  useEffect(() => {
+    dispatch(getDocuments.request());
+  }, [dispatch]);
   return (
     <div>
       <App>
@@ -15,10 +24,10 @@ const Index = () => {
           </div>
           <div className='w-full border-2 rounded-lg shadow-lg p-4 mt-8'>
             <ul className="w-full">
-              {materials.map(material => (
-                <li key={material.id} className='py-4 px-6 mb-4 bg-gray-100 rounded-md'>
-                  <Link key={material.id} href={material.file}>
-                      {material.name}
+              {documents.map(document => (
+                <li key={documents?.id} className='py-4 px-6 mb-4 bg-gray-100 rounded-md'>
+                  <Link key={document?.id} href={process.env.IMAGE_URL+JSON.parse(document?.pdf)[0].download_link}>
+                      {document?.title}
                   </Link>
                 </li>
               ))}

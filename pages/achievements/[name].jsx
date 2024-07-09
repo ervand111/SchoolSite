@@ -6,15 +6,16 @@ import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import {getEvent} from "@/store/events/actions";
 import {Skeleton} from "antd";
+import {getAchievement} from "@/store/achievements/actions";
 
 const Name = () => {
   const router = useRouter();
   const {name} = router.query;
   const dispatch = useDispatch();
-  const event = useSelector((state) => state?.event?.selectedEvent);
-  const isFetching = useSelector((state) => state?.event?.isFetching);
+  const achievement = useSelector((state) => state?.event?.selectedAchievemet);
+  const isFetching = useSelector((state) => state?.achievement?.isFetching);
   useEffect(() => {
-    dispatch(getEvent.request({id: name}));
+    dispatch(getAchievement.request({id: name}));
   }, [dispatch, name]);
 
   return (
@@ -27,15 +28,15 @@ const Name = () => {
                 <p className='text-xl italic'>13/06/2024</p>
               </div>
               <div className='w-11/12 m-auto'>
-                <h1 className='mb-10 text-2xl '>{event?.title}</h1>
+                <h1 className='mb-10 text-2xl '>{achievement?.title}</h1>
               </div>
               <div className='w-11/12 m-auto h-2/6'>
-                <Image src={process.env.IMAGE_URL + event?.avatar} className='w-full h-full object-cover' alt={"Image"}
+                <Image src={process.env.IMAGE_URL + achievement?.avatar} className='w-full h-full object-cover' alt={"Image"}
                        width={1000}
                        height={1000}/>
               </div>
               <div className='w-11/12 m-auto h-auto mt-6'>
-                <p dangerouslySetInnerHTML={{__html: event?.content}}></p>
+                <p dangerouslySetInnerHTML={{__html: achievement?.content}}></p>
 
               </div>
             </Skeleton>

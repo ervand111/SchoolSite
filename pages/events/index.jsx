@@ -17,7 +17,7 @@ const Index = () => {
           <h2 className='text-center text-amber-900 p-10 tracking-wider animate-fade-in-up text-4xl'>Միջոցառումներ</h2>
           <div className='w-11/12 h-auto flex flex-wrap justify-evenly items-start m-auto '>
             {events.map((item) => (
-              <EventItem key={item.id} text={item.title} image={item.avatar}/>
+              <EventItem id={item.id} key={item.id} type='event' text={item.title} image={item.avatar}/>
             ))}
           </div>
         </div>

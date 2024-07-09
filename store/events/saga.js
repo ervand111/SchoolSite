@@ -1,5 +1,6 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
 import {
+  getEvent,
   getEvents,
 } from './actions';
 import axiosInstance from 'configs/axiosIntance';
@@ -14,8 +15,17 @@ function* fetchEventsSaga({payload = {}}) {
   }
 }
 
+function* fetchEventSaga(action) {
+  try {
+    const {id} = action.payload;
+    const response = yield call(() => axiosInstance.get('/events/'+id, action.payload));
+    yield put(getEvent.success(response.data));
+  } catch (error) {
+    yield put(getEvent.failure(error.message));
+  }
+}
 
-// Slide Watcher Saga
 export function* eventSaga() {
   yield takeLatest(getEvents.request, fetchEventsSaga);
+  yield takeLatest(getEvent.request, fetchEventSaga);
 }

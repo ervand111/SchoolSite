@@ -18,7 +18,7 @@ const Index = () => {
           <h2 className='text-center text-amber-900 p-10 tracking-wider animate-fade-in-up text-4xl'>Ձեռքբերումներ</h2>
           <div className='flex flex-wrap justify-between'>
             {achievements?.map((item) => (
-              <EventItem key={item.id} text={item.title} image={item.avatar}/>
+              <EventItem id={item.id} key={item.id} type={'achievements'} text={item.title} image={item.avatar}/>
             ))}
           </div>
         </div>

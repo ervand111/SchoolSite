@@ -5,7 +5,9 @@ export const getEvents = {
   success: createAction('GET_EVENTS_SUCCESS'),
   failure: createAction('GET_EVENTS_FAILURE'),
 };
+export const getEvent = {
+  request: createAction('GET_EVENT_REQUEST'),
+  success: createAction('GET_EVENT_SUCCESS'),
+  failure: createAction('GET_EVENT_FAILURE'),
+};
 
-export class getSlides {
-  static request;
-}

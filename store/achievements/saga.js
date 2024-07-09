@@ -1,5 +1,6 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
 import {
+  getAchievement,
   getAchievements,
 } from './actions';
 import axiosInstance from 'configs/axiosIntance';
@@ -13,9 +14,17 @@ function* fetchAchievementsSaga({payload = {}}) {
     yield put(getAchievements.failure(error.message));
   }
 }
+function* fetchAchievementSaga(action) {
+  try {
+    const {id} = action.payload;
+    const response = yield call(() => axiosInstance.get('/achievements/'+id, action.payload));
+    yield put(getAchievement.success(response.data));
+  } catch (error) {
+    yield put(getAchievement.failure(error.message));
+  }
+}
 
-
-// Slide Watcher Saga
 export function* achievementSaga() {
   yield takeLatest(getAchievements.request, fetchAchievementsSaga);
+  yield takeLatest(getAchievement.request, fetchAchievementSaga);
 }
