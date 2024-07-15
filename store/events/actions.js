@@ -11,3 +11,11 @@ export const getEvent = {
   failure: createAction('GET_EVENT_FAILURE'),
 };
 
+export const getRandEvents = {
+  request: createAction('GET_RAND_EVENTS_REQUEST'),
+  success: createAction('GET_RAND_EVENTS_SUCCESS'),
+  failure: createAction('GET_RAND_EVENTS_FAILURE'),
+};
+
+
+

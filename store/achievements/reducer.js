@@ -1,13 +1,13 @@
 import { handleActions } from 'redux-actions';
 import {
   getAchievement,
-  getAchievements,
+  getAchievements, getRandAchievement, getRandAchievements,
 } from './actions';
 import {getEvent} from "@/store/events/actions";
 
 const initialState = {
   achievements: [],
-  selectedSlide: null,
+  selectedAchievemet: null,
   isFetching: false,
   isAdding: false,
   isUpdating: false,
@@ -27,13 +27,23 @@ const achievementsReducer = handleActions(
       isFetching: false,
       error: payload,
     }),
+    [getRandAchievements.success]: (state, { payload }) => ({
+      ...state,
+      achievements: payload,
+      isFetching: false,
+    }),
+    [getRandAchievements.failure]: (state, { payload }) => ({
+      ...state,
+      isFetching: false,
+      error: payload,
+    }),
     [getAchievement.request]: (state) => ({
       ...state,
       isFetching: true,
     }),
     [getAchievement.success]: (state, { payload }) => ({
       ...state,
-      selectedEvent: payload,
+      selectedAchievemet: payload,
       isFetching: false,
     }),
     [getAchievement.failure]: (state, { payload }) => ({

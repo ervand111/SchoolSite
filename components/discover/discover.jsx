@@ -16,7 +16,7 @@ const Discover = () => {
           <p className="text-2xl text-white">Մանկավարժական խորհուրդ</p>
         </div>
       </Link>
-      <Link  className='flex justify-center items-center'  href={'/parentalAdvice'}>
+      <Link  className='flex justify-center items-center'  href={'/advice'}>
         <div
           className="mt-8 w-96 h-40 bg-green-700 flex transform transition duration-500 hover:scale-110 hover:bg-green-600 justify-center items-center">
           <p className="text-2xl text-white">Ծնողական խորհուրդ</p>

@@ -6,6 +6,8 @@ import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
 import {getNewsById, getRandNews} from "@/store/news/actions";
 import {Skeleton} from "antd";
+import Link from "next/link";
+import item from "@/components/news/item";
 
 const Name = () => {
   const router = useRouter();
@@ -50,7 +52,9 @@ const Name = () => {
             <Skeleton loading={isFetching} active>
               <>
                 {randNews?.map((item) => (
-                  <SmallItem key={item.id} item={item}/>
+                  <Link key={item.id} href={`/news/${item.id}`}>
+                    <SmallItem item={item} />
+                  </Link>
                 ))}
               </>
             </Skeleton>

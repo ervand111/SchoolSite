@@ -11,3 +11,8 @@ export const getAchievement = {
   success: createAction('GET_ACHIEVEMENT_SUCCESS'),
   failure: createAction('GET_ACHIEVEMENT_FAILURE'),
 };
+export const getRandAchievements = {
+  request: createAction('GET_RAND_ACHIEVEMENTS_REQUEST'),
+  success: createAction('GET_RAND_ACHIEVEMENTS_SUCCESS'),
+  failure: createAction('GET_RAND_ACHIEVEMENTS_FAILURE'),
+};

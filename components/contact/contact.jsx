@@ -1,13 +1,19 @@
 import React from 'react';
 import {EnvironmentOutlined, PhoneOutlined, ClockCircleOutlined} from "@ant-design/icons";
-import {Button, Input, Form} from "antd";
+import {Button, Input, Form, message} from "antd";
 import Image from "next/image";
+import {addContact} from "@/store/contact/actions";
+import {useDispatch} from "react-redux";
 
 const Contact = () => {
   const [form] = Form.useForm();
-
+  const dispatch = useDispatch();
   const onFinish = (values) => {
-    console.log('Success:', values);
+    // alert()
+    // console.log(values)
+    form.resetFields()
+    message.success("Ձեր հայտը ուղարկված է")
+    dispatch(addContact.request(values))
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -21,7 +27,8 @@ const Contact = () => {
         <h2 className='text-center  pt-10 pb-20 tracking-wider animate-fade-in-up text-4xl'>Կապ մեզ հետ</h2>
       </div>
       <div className='w-9/12 h-auto flex  justify-around items-center contact '>
-        <div className='w-1/4 h-52  bg-yellow-400 flex justify-center items-center flex-col transition duration-500  hover:scale-110 hover:bg-yellow-300'>
+        <div
+          className='w-1/4 h-52  bg-yellow-400 flex justify-center items-center flex-col transition duration-500  hover:scale-110 hover:bg-yellow-300'>
           <div className='w-1/2 h-32 flex justify-center items-center '>
             <EnvironmentOutlined className='text-5xl text-white'/>
           </div>
@@ -64,7 +71,7 @@ const Contact = () => {
             className='w-3/4  h-full  flex justify-start items-center flex-wrap'
           >
             <Form.Item className='w-11/12  mt-4'
-                       name="fullName"
+                       name="name"
                        rules={[{required: true, message: 'Գրեք ձեր անունը!'}, {
                          max: 255,
                          message: 'Հաղորդագրությունը չափազանց 255 նիշ պետք է լինի!'
@@ -91,7 +98,7 @@ const Contact = () => {
             </Form.Item>
 
             <Form.Item className='w-11/12'
-                       name="phoneNumber"
+                       name="phone"
                        rules={[
                          {required: true, message: 'Գրեք ձեր հեռախոսահամարը!'},
                          {max: 255, message: 'Հաղորդագրությունը չափազանց 255 նիշ պետք է լինի!'},
@@ -118,7 +125,8 @@ const Contact = () => {
             </Form.Item>
 
             <Form.Item className='formItem'>
-              <Button type="submit" htmlType="submit" className='p-5   flex justify-center  items-center mt-4  bg-green-700  text-white   rounded-full '>
+              <Button type="submit" htmlType="submit"
+                      className='p-5   flex justify-center  items-center mt-4  bg-green-700  text-white   rounded-full '>
                 Ուղարկել հիմա
               </Button>
             </Form.Item>

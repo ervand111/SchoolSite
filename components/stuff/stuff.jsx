@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import App from "@/components/layouts/app";
 import Image from "next/image";
+import {useDispatch, useSelector} from "react-redux";
+import {getStuff} from "@/store/stuff/actions";
+import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 
 const Stuff = () => {
+  const dispatch = useDispatch();
+  const stuff = useSelector(state => state.stuff.stuff)
+  useEffect(() => {
+    dispatch(getStuff.request());
+  }, [dispatch]);
   return (
     <App>
       <div className="w-11/12 m-auto mb-20 stuffPatrent">
-        <h2  className='text-center text-amber-900 mt-10  tracking-wider animate-fade-in-up text-4xl'>Աշխատակազմ</h2>
+        <h2 className='text-center text-amber-900 mt-10  tracking-wider animate-fade-in-up text-4xl'>Աշխատակազմ</h2>
       </div>
       <div className='w-full h-auto stuffPatrent'>
         <div className='w-11/12 h-auto  flex-wrap m-auto  mb-12'>
           <div className='w-1/4   h-auto p-4 float-left stuffImage'>
-            <div className='w-full h-auto border-black border  mt-4 flex  items-center flex-col  shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
+            <div
+              className='w-full h-auto border-black border  mt-4 flex  items-center flex-col  shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
               <Image
                 class='w-full h-full object-contain  filter drop-shadow-lg transition-transform transform hover:scale-105'
                 src='/tnoren.jpg'
@@ -24,7 +33,8 @@ const Stuff = () => {
                 <p className='text-1xl p-1 text-amber-900 font-medium animate-fadeIn drop-shadow-md'>
                   Ռուզաննա Շուրկայի Ալավերդյան
                 </p>
-                  <p className='text-center text-1xl p-1 text-amber-900 font-medium animate-fadeIn drop-shadow-md'>Տնօրեն</p>
+                <p
+                  className='text-center text-1xl p-1 text-amber-900 font-medium animate-fadeIn drop-shadow-md'>Տնօրեն</p>
               </div>
             </div>
           </div>
@@ -61,47 +71,28 @@ const Stuff = () => {
         </div>
 
         <div className='w-full flex justify-evenly items-center mb-10 stuffPerson'>
-          <div className='w-1/4 h-auto flex justify-center items-center flex-col p-4 stuffPerson'>
-          <div
-              className='w-full h-auto flex justify-center items-center flex-col bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
-              <Image
-                class='w-full h-80 object-contain filter drop-shadow-lg transition-transform transform hover:scale-105'
-                src='/karine.jpg'
-                width={1000}
-                height={1000}
-                alt='Karine Melkumyan'
-              />
-              <div className='p-4'>
-                <p className='text-xl p-1 text-amber-900 font-medium animate-fadeIn drop-shadow-md'>
-                  Կարինե Մաքսիմի Մելքումյան
-                </p>
-                <p className='text-1xl p-1 font-bold text-gray-700 animate-fadeIn drop-shadow-md'>
-                  Տնօրենի տեղակալ` մասնագիտացված կրթական աջակցությունների գծով
-                </p>
+          {stuff.filter(x => x.deputy_status === 1).map((item) => (
+            <div key={item.id} className='w-1/4 h-auto flex justify-center items-center flex-col p-4 stuffPerson'>
+              <div
+                className='w-full h-auto flex justify-center items-center flex-col bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
+                <Image
+                  class='w-full h-80 object-contain filter drop-shadow-lg transition-transform transform hover:scale-105'
+                  src={process.env.IMAGE_URL + item?.avatar}
+                  width={1000}
+                  height={1000}
+                  alt='Karine Melkumyan'
+                />
+                <div className='p-4'>
+                  <p className='text-xl p-1 text-amber-900 font-medium animate-fadeIn drop-shadow-md'>
+                    {item.fullname}
+                  </p>
+                  <p className='text-1xl p-1 font-bold text-gray-700 animate-fadeIn drop-shadow-md'>
+                    {item.profession}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className='w-1/4 h-auto flex justify-center items-center flex-col p-4 stuffPerson'>
-            <div
-              className='w-full h-auto flex justify-center items-center flex-col bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl'>
-              <Image
-                class='w-full h-80 object-contain filter drop-shadow-lg transition-transform transform hover:scale-105'
-                src='/Araqsya.jpg'
-                width={1000}
-                height={1000}
-                alt='Araqsya Hovsepyan'
-              />
-              <div className='p-4'>
-                <p className='text-xl p-1 text-amber-900 font-medium animate-fadeIn drop-shadow-md'>
-                  Արաքսյա Միքայելի Հովսեփյան
-                </p>
-                <p className='text-1xl p-1 font-bold text-gray-700 animate-fadeIn drop-shadow-md'>
-                  Տնօրենի տեղակալ` ուսումնական աշխատանքների գծով
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
 
         </div>
 
@@ -112,89 +103,33 @@ const Stuff = () => {
         </div>
       </div>
       <div className='w-full h-auto  flex flex-wrap justify-evenly border-t-2 border-black '>
-        <div className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
-          <div className='w-2/5'>
-            <Image
-              className='w-full h-80 object-contain filter'
-              src='/irina.jpg'
-              width={1000}
-              height={1000}
-              alt='Irina Grigoryan'
-            />
+        {stuff.filter(x => x.deputy_status !== 1).map((item) => (
+          <div
+            key={item.id}
+            className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
+            <div className='w-2/5'>
+              <Image
+                className='w-full h-80 object-contain filter'
+                src={process.env.IMAGE_URL + item?.avatar}
+                width={1000}
+                height={1000}
+                alt='Irina Grigoryan'
+              />
+            </div>
+            <div className='w-1/2 h-full flex flex-col justify-center text-start '>
+              <p className='p-2 text-2xl font-serif text-gray-800'>{item.fullname}</p>
+              <p className='p-2 text-xl font-serif text-gray-700'>  {item.profession}</p>
+              <p className='p-2 text-lg font-serif text-gray-600'>Email:  {item.email}</p>
+            </div>
           </div>
-          <div className='w-1/2 h-full flex flex-col justify-center text-start '>
-            <p className='p-2 text-2xl font-serif text-gray-800'>Իրինա Ռուդիկի Գրիգորյան</p>
-            <p className='p-2 text-xl font-serif text-gray-700'>Տնօրենի պաշտոնակատար</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Քիմիայի ուսուցիչ</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Email:</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>irinagrigoryan109@gmail.com</p>
-          </div>
-        </div>
-
-        <div
-          className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
-          <div className='w-2/5 items-center flex'>
-            <Image
-              className='w-full h-72 object-contain filter'
-              src='/sona.jpg'
-              width={1000}
-              height={1000}
-              alt='Irina Grigoryan'
-            />
-          </div>
-          <div className='w-7/12 h-full flex  flex-col justify-center text-start'>
-            <p className='p-2 text-2xl font-serif text-gray-800'>ՍՈՆԱ ՌԱԶՄԻԿԻ ՂՈՒԿԱՍՅԱՆ</p>
-            <p className='p-2 text-xl font-serif text-gray-700'>Փոխտնօրեն</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Մաթեմատիկայի ուսուցիչ</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Email:</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>gukasyan67@mail.ru</p>
-          </div>
-        </div>
-        <div
-          className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
-          <div className='w-2/5'>
-            <Image
-              className='w-full h-80 object-contain filter'
-              src='/anna.jpg'
-              width={1000}
-              height={1000}
-              alt='Irina Grigoryan'
-            />
-          </div>
-          <div className='w-7/12  h-full flex flex-col justify-center text-start'>
-            <p className='p-2 text-2xl font-serif text-gray-800'>Աննա Գրիգորի Ստեփանյան</p>
-            <p className='p-2 text-xl font-serif text-gray-700'>ՈՒսուցիչ</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Հայոց լեզվի և գրականության</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Email:</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>A.Stepanyan00@mail.ru</p>
-          </div>
-        </div>
-        <div
-          className='w-5/12 h-80 m-4 flex stuffPersons justify-evenly shadow-md shadow-amber-900 hover:shadow-2xl  transition-shadow duration-500 ease-in-out'>
-          <div className='w-2/5'>
-            <Image
-              className='w-full h-80 object-contain filter'
-              src='/anna1.jpg'
-              width={1000}
-              height={1000}
-              alt='Irina Grigoryan'
-            />
-          </div>
-          <div className='w-5/12h-full flex flex-col justify-center text-start'>
-            <p className='p-2 text-2xl font-serif text-gray-800'>Աննա Հրաչիկի Խատայան</p>
-            <p className='p-2 text-xl font-serif text-gray-700'>ՈՒսուցիչ</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Անգլերենի</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>Email:</p>
-            <p className='p-2 text-lg font-serif text-gray-600'>mailyan1968@mail.ru</p>
-          </div>
-        </div>
+        ))}
       </div>
 
 
-</App>
+    </App>
 
-)
-  ;
+  )
+    ;
 };
 
 export default Stuff;

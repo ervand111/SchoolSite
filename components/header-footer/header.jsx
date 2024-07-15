@@ -133,7 +133,7 @@ const Header = () => {
                               <Link href='/pedagogic'>
                                 <li className="p-2">Մանկավարժական</li>
                               </Link>
-                              <Link href='/parentalAdvice'>
+                              <Link href='/advice'>
                                 <li className="p-2">Ծնողական</li>
                               </Link>
                               <Link href='/students'>

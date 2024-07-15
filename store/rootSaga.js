@@ -6,6 +6,11 @@ import {brandSaga} from "@/store/brands/saga";
 import {achievementSaga} from "@/store/achievements/saga";
 import {graduateSaga} from "@/store/graduates/saga";
 import {documentSaga} from "@/store/documents/saga";
+import {pedagogicSaga} from "@/store/pedagogic/saga";
+import {usersPedagogicSaga} from "@/store/user/saga";
+import {stuffSaga} from "@/store/stuff/saga";
+import {adviceSaga} from "@/store/advices/saga";
+import {contactSaga} from "@/store/contact/saga";
 
 function* rootSaga() {
   yield all([
@@ -16,6 +21,11 @@ function* rootSaga() {
     achievementSaga(),
     graduateSaga(),
     documentSaga(),
+    pedagogicSaga(),
+    usersPedagogicSaga(),
+    stuffSaga(),
+    adviceSaga(),
+    contactSaga()
   ]);
 }
 

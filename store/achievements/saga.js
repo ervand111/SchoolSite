@@ -1,7 +1,7 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
 import {
   getAchievement,
-  getAchievements,
+  getAchievements, getRandAchievements,
 } from './actions';
 import axiosInstance from 'configs/axiosIntance';
 
@@ -12,6 +12,15 @@ function* fetchAchievementsSaga({payload = {}}) {
     yield put(getAchievements.success(achievements));
   } catch (error) {
     yield put(getAchievements.failure(error.message));
+  }
+}
+function* fetchRandAchievementsSaga({payload = {}}) {
+  try {
+    const response = yield call(() => axiosInstance.get('/achievements/rand', payload));
+    const achievements = response.data;
+    yield put(getRandAchievements.success(achievements));
+  } catch (error) {
+    yield put(getRandAchievements.failure(error.message));
   }
 }
 function* fetchAchievementSaga(action) {
@@ -27,4 +36,5 @@ function* fetchAchievementSaga(action) {
 export function* achievementSaga() {
   yield takeLatest(getAchievements.request, fetchAchievementsSaga);
   yield takeLatest(getAchievement.request, fetchAchievementSaga);
+  yield takeLatest(getRandAchievements.request, fetchRandAchievementsSaga);
 }

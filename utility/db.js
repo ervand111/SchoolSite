@@ -27,7 +27,7 @@ export const categories = [
       {
         id: 4, label: "Խորհուրդներ", path:"", drb: [
           {label:"Մանկավարժական",path:"/pedagogic"},
-          {label:"Ծնողական",path: "/parentalAdvice"},
+          {label:"Ծնողական",path: "/advice"},
           {label:"Աշակերտական",path: "/students"},
         ]
       },
@@ -38,7 +38,7 @@ export const categories = [
     label: 'Events',
     icon: <CaretDownOutlined/>,
     name: "Միջոցառումներ",
-    path: "events"
+    path: "/events"
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ export const categories = [
   {
     id: 10,
     label: 'Contact',
-    path: "contact",
+    path: "/contact",
     icon: <CaretDownOutlined/>,
     name: "Կապ"
   }

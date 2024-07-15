@@ -1,7 +1,7 @@
 import { handleActions } from 'redux-actions';
 import {
   getEvent,
-  getEvents,
+  getEvents, getRandEvents,
 } from './actions';
 
 const initialState = {
@@ -22,6 +22,16 @@ const eventReducer = handleActions(
       isFetching: false,
     }),
     [getEvents.failure]: (state, { payload }) => ({
+      ...state,
+      isFetching: false,
+      error: payload,
+    }),
+    [getRandEvents.success]: (state, { payload }) => ({
+      ...state,
+      events: payload,
+      isFetching: false,
+    }),
+    [getRandEvents.failure]: (state, { payload }) => ({
       ...state,
       isFetching: false,
       error: payload,

@@ -1,7 +1,7 @@
 import {takeLatest, call, put} from 'redux-saga/effects';
 import {
   getEvent,
-  getEvents,
+  getEvents, getRandEvents,
 } from './actions';
 import axiosInstance from 'configs/axiosIntance';
 
@@ -14,7 +14,15 @@ function* fetchEventsSaga({payload = {}}) {
     yield put(getEvents.failure(error.message));
   }
 }
-
+function* fetchRandEventsSaga({payload = {}}) {
+  try {
+    const response = yield call(() => axiosInstance.get('/events/rand', payload));
+    const events = response.data;
+    yield put(getRandEvents.success(events));
+  } catch (error) {
+    yield put(getRandEvents.failure(error.message));
+  }
+}
 function* fetchEventSaga(action) {
   try {
     const {id} = action.payload;
@@ -28,4 +36,5 @@ function* fetchEventSaga(action) {
 export function* eventSaga() {
   yield takeLatest(getEvents.request, fetchEventsSaga);
   yield takeLatest(getEvent.request, fetchEventSaga);
+  yield takeLatest(getRandEvents.request, fetchRandEventsSaga);
 }
