@@ -21,15 +21,15 @@ const ParentalAdvice = () => {
             </h2>
           </div>
 
-          <div className="max-w-6xl bg-white parentalAdviceImg rounded-lg overflow-hidden shadow-2xl w-full lg:flex transition-transform transform hover:scale-105">
-            <div className="w-full lg:w-1/2 relative overflow-hidden">
+          <div className="w-1/2  bg-white parentalAdviceImg rounded-lg overflow-hidden shadow-2xl lg:flex transition-transform transform hover:scale-105">
+            <div className="w-full h-auto lg:w-1/2 relative overflow-hidden">
               <Image
                 src={process.env.IMAGE_URL + advice?.avatar}
                 alt="students"
                 layout="responsive"
-                width={1000}
-                height={1000}
-                className="object-cover w-full h-96 lg:h-full"
+                width={500}
+                height={500}
+                className="object-cover w-full  h-96 lg:h-full"
               />
             </div>
 

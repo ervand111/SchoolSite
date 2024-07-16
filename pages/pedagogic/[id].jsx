@@ -9,6 +9,7 @@ import {getNewsById} from "@/store/news/actions";
 import {getUserWithPedagogic} from "@/store/user/actions";
 import {useDispatch, useSelector} from "react-redux";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import {getPedagogic} from "@/store/pedagogic/actions";
 
 const Id = () => {
   const [info, setInfo] = useState({})
@@ -16,20 +17,31 @@ const Id = () => {
   const dispatch = useDispatch();
   const {id} = router.query;
   const users = useSelector((state) => state?.userWithPedagogic?.users);
-  const [director, setDirector]= useState({});
+  const [director, setDirector] = useState({});
+  const [title, setTitle] = useState(null)
   useEffect(() => {
     dispatch(getUserWithPedagogic.request({id: id}));
   }, [dispatch, id]);
-  
-  useEffect(()=>{
-    setDirector(users?.find(x=>x.director_status===1));
-  },[users])
+
+  useEffect(() => {
+    setDirector(users?.find(x => x.director_status === 1));
+  }, [users])
+  const pedagogic = useSelector(state => state?.pedagogic?.pedagogic)
+  useEffect(() => {
+    dispatch(getPedagogic.request());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setTitle(pedagogic.filter(x => x.id == id)[0])
+  }, [id, pedagogic])
   return (
     <div>
       <App>
         <div className='w-11/12 h-auto flex justify-center   items-center mt-12 m-auto pedagogicPage'>
           <Banner>
-            {info?.label}
+            <div>
+              {title?.title}
+            </div>
           </Banner>
         </div>
         <div
@@ -41,14 +53,14 @@ const Id = () => {
           <div className='w-1/3 h-80 flex  justify-center items-center '>
             <Image
               className='w-11/12 h-5/6 object-contain filter  drop-shadow-lg transition-transform transform hover:scale-105'
-              src={process.env.IMAGE_URL+director?.avatar}
+              src={process.env.IMAGE_URL + director?.avatar}
               width={1000}
               height={1000}
               alt={pedagogic}
             />
           </div>
           <div className='w-1/3 h-44 flex justify-center items-center flex-col rounded-lg shadow-2xl p-4'>
-            <p className='text-3xl font-bold mb-2'>{director?.fullname}</p>
+            <p className='text-2xl font-bold mb-2'>{director?.fullname}</p>
           </div>
         </div>
         <div
@@ -59,8 +71,8 @@ const Id = () => {
         <div
           className='w-11/12 h-auto m-auto flex items-center justify-center overflow-hidden rounded-lg shadow-lg'>
           {users?.filter(x => x.director_status !== 1).map((item) => (
-            <div key={item.id} className='w-full  h-auto  flex-wrap flex  items-center justify-center p-4'>
-              <div className='w-11/12 h-full flex itemPedagonic   justify-center items-center'>
+            <div key={item.id} className='w-full  h-auto  flex-col flex  items-center justify-center p-4'>
+              <div className='w-1/3 h-full flex itemPedagonic   justify-center items-center'>
                 <Image
                   className='w-full h-full object-cover rounded-lg shadow-lg'
                   src={process.env.IMAGE_URL + item?.avatar}
@@ -69,8 +81,8 @@ const Id = () => {
                   height={400}
                 />
               </div>
-              <div className='w-2/3 h-full itemPedagonic flex justify-center items-center flex-col p-4'>
-                <p className='text-2xl  text-center font-bold mb-2'>{item?.fullname}</p>
+              <div className='w-auto h-full itemPedagonic flex justify-center items-center flex-col p-4'>
+                <p className='text-xl  text-center font-bold mb-2'>{item?.fullname}</p>
                 <p className='text-xl text-gray-700'>{item?.profession}</p>
               </div>
             </div>

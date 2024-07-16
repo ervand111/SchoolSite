@@ -7,7 +7,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {getNewsById, getRandNews} from "@/store/news/actions";
 import {Skeleton} from "antd";
 import Link from "next/link";
-import item from "@/components/news/item";
 
 const Name = () => {
   const router = useRouter();
@@ -33,14 +32,13 @@ const Name = () => {
               <div className='w-11/12 m-auto'>
                 <h1 className='mb-10 text-2xl '>{news?.title}</h1>
               </div>
-              <div className='w-11/12 m-auto h-2/6'>
+              <div className='w-11/12 m-auto h-3/6'>
                 <Image src={process.env.IMAGE_URL + news?.avatar} className='w-full h-full object-cover' alt={"Image"}
                        width={1000}
                        height={1000}/>
               </div>
               <div className='w-11/12 m-auto h-auto mt-6'>
                 <p dangerouslySetInnerHTML={{__html: news?.content}}></p>
-
               </div>
             </Skeleton>
           </div>

@@ -12,7 +12,7 @@ const Contact = () => {
     // alert()
     // console.log(values)
     form.resetFields()
-    message.success("Ձեր հայտը ուղարկված է")
+    message.success("Ձեր հայտը ուղղարկված է")
     dispatch(addContact.request(values))
   };
 

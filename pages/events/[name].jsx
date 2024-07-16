@@ -36,7 +36,7 @@ const Details = () => {
                 <div className='w-11/12 m-auto'>
                   <h1 className='mb-10 text-2xl '>{event?.title}</h1>
                 </div>
-                <div className='w-11/12 m-auto h-2/6'>
+                <div className='w-11/12 m-auto h-3/6'>
                   <Image src={process.env.IMAGE_URL + event?.avatar} className='w-full h-full object-cover'
                          alt={"Image"}
                          width={1000}

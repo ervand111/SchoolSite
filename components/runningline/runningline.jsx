@@ -40,7 +40,7 @@ const Running = (props) => {
       <Slider  {...settings}>
         {props.data.map((item) => (
           <div key={item.id}>
-            <Image width={100} height={100}  src={process.env.IMAGE_URL+item.image} alt={"brands"}/>
+            <Image className='w-1/2 h-1/2' width={100} height={100}  src={process.env.IMAGE_URL+item.image} alt={"brands"}/>
           </div>
         ))}
       </Slider>

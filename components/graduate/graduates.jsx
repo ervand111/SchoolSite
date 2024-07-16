@@ -2,11 +2,13 @@ import React, {useEffect} from 'react';
 import Person from "@/components/graduate/person";
 import {useDispatch, useSelector} from "react-redux";
 import {getGraduates} from "@/store/graduates/actions";
+import {Skeleton} from "antd";
 
 const Graduates = () => {
 
   const dispatch = useDispatch();
   const graduates = useSelector(state => state.graduate.graduates)
+  const isFetching = useSelector(state => state.graduate.isFetching)
   useEffect(() => {
     dispatch(getGraduates.request());
   }, [dispatch]);
@@ -17,9 +19,13 @@ const Graduates = () => {
       </div>
       <div className='w-11/12 m-auto'>
         <div className='w-full flex flex-wrap justify-evenly childrenGraduate'>
+          <Skeleton loading={isFetching} active>
+
         {graduates?.map((item) => (
-          <Person key={item.id} user={item}/>
+          <Person key={item.id} isFetching={isFetching} user={item}/>
         ))}
+          </Skeleton>
+
         </div>
       </div>
     </div>

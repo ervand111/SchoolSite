@@ -34,7 +34,7 @@ const Name = () => {
               <div className='w-11/12 m-auto'>
                 <h1 className='mb-10 text-2xl '>{achievement?.title}</h1>
               </div>
-              <div className='w-11/12 m-auto h-2/6'>
+              <div className='w-11/12 m-auto h-2/5'>
                 <Image src={process.env.IMAGE_URL + achievement?.avatar} className='w-full h-full object-cover'
                        alt={"Image"}
                        width={1000}

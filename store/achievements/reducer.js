@@ -17,6 +17,10 @@ const initialState = {
 
 const achievementsReducer = handleActions(
   {
+    [getAchievements.request]: (state, { payload }) => ({
+      ...state,
+      isFetching: true,
+    }),
     [getAchievements.success]: (state, { payload }) => ({
       ...state,
       achievements: payload,

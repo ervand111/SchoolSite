@@ -1,15 +1,17 @@
 import React, {useEffect} from 'react';
 import App from "@/components/layouts/app";
 import Link from "next/link";
-import { materials } from "@/utility/db";
+import {materials} from "@/utility/db";
 import {useDispatch, useSelector} from "react-redux";
 import {getAchievements} from "@/store/achievements/actions";
 import {getDocuments} from "@/store/documents/actions";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import {Skeleton} from "antd";
 
 const Index = () => {
   const dispatch = useDispatch();
   const documents = useSelector(state => state.document.documents)
+  const isFetching = useSelector(state => state.document.isFetching)
   useEffect(() => {
     dispatch(getDocuments.request());
   }, [dispatch]);
@@ -22,17 +24,21 @@ const Index = () => {
               Փաստաթղթեր
             </h2>
           </div>
-          <div className='w-full border-2 rounded-lg shadow-lg p-4 mt-8'>
-            <ul className="w-full">
-              {documents.map(document => (
-                <li key={documents?.id} className='py-4 px-6 mb-4 bg-gray-100 rounded-md'>
-                  <Link key={document?.id} href={process.env.IMAGE_URL+JSON.parse(document?.pdf)[0].download_link}>
+          <Skeleton loading={isFetching} active>
+
+            <div className='w-full border-2 rounded-lg shadow-lg p-4 mt-8'>
+              <ul className="w-full">
+                {documents.map(document => (
+                  <li key={documents?.id} className='py-4 px-6 mb-4 bg-gray-100 rounded-md'>
+                    <Link key={document?.id} href={process.env.IMAGE_URL + JSON.parse(document?.pdf)[0].download_link}>
                       {document?.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Skeleton>
+
         </div>
       </App>
     </div>

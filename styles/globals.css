@@ -218,6 +218,7 @@ input::placeholder {
 
 .slick-slide img {
     margin: auto;
+
 }
 
 .menuBars {
@@ -680,7 +681,6 @@ input::placeholder {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 95%;
     }
 
     .event h2 {
@@ -694,6 +694,7 @@ input::placeholder {
 
     .event img {
         width: 100%;
+
     }
 
     .discover p {

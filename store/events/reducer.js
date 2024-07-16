@@ -16,16 +16,22 @@ const initialState = {
 
 const eventReducer = handleActions(
   {
+    [getEvents.request]: (state) => ({
+      ...state,
+      isFetching: true,
+    }),
     [getEvents.success]: (state, { payload }) => ({
       ...state,
       events: payload,
       isFetching: false,
     }),
+
     [getEvents.failure]: (state, { payload }) => ({
       ...state,
       isFetching: false,
       error: payload,
     }),
+
     [getRandEvents.success]: (state, { payload }) => ({
       ...state,
       events: payload,
