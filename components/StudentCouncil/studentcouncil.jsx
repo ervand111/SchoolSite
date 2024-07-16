@@ -11,25 +11,25 @@ const Student = () => {
     dispatch(getAdvice.request());
   }, [dispatch]);
   return (
-    <div className='w-full h-screen bg-gradient-to-b from-gray-100 to-gray-200'>
-      <div className='py-10 student'>
+    <div className='w-full h-screen  bg-gradient-to-b from-gray-100 to-gray-200'>
+      <div className='py-10'>
         <h2 className='text-center text-amber-900 tracking-wider animate-fade-in-up text-4xl'>
           Աշակերտական խորհուրդ
         </h2>
       </div>
-      <div className="mt-6 flex  justify-center items-center">
-        <div className=" w-4/6  bg-white studentImg rounded-3xl parentalAdviceImg overflow-hidden shadow-2xl  lg:flex transition-transform transform hover:scale-105">
-          <div className="w-full lg:w-1/2 relative overflow-hidden">
+      <div className=" w-11/12 m-auto h-auto mb-10  mt-20 flex  justify-center items-center">
+        <div className="w-11/12 h-96 bg-white rounded-3xl flex justify-center items-center overflow-hidden shadow-2xl  lg:flex transition-transform transform hover:scale-105">
+          <div className=" w-1/4 h-full flex items-center studentImg ">
             <Image
               src={process.env.IMAGE_URL + student?.avatar}
               alt="students"
               layout="responsive"
               width={1000}
               height={1000}
-              className="object-cover w-full h-96 lg:h-full"
+              className="w-full h-full object-cover image"
             />
           </div>
-          <div className="w-full lg:w-1/2 py-10 px-8 flex flex-col justify-center items-start space-y-4">
+          <div className="w-1/2  studentText  p-8 flex flex-col justify-center items-start space-y-4">
             <p className="text-2xl font-bold text-purple-900">
               {student?.title}
             </p>

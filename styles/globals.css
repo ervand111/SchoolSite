@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: 0;
 }
+
 .slick-next, .slick-prev {
     object-fit: contain;
 }
@@ -22,12 +23,11 @@
 
 }
 
-.images-event {
-    height: 250px;
-}
 
 .images-event img {
-    height: 200px;
+    height: 300px !important;
+    object-fit: cover;
+
 }
 
 .slider button {
@@ -313,6 +313,7 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 1050px) {
+
     .contactTExt h2 {
         margin: 0;
         padding: 0;
@@ -329,6 +330,7 @@ input::placeholder {
     .contact1 input {
         height: 30px;
     }
+
     .menuBars {
         display: block;
     }
@@ -358,12 +360,30 @@ input::placeholder {
     }
 
 }
+
 @media only screen and (max-width: 1000px) {
+    .studentText p{
+        font-size: 18px;
+    }
+    .image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .studentImg {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .itemPedagonic div img {
         width: 90%;
 
     }
-    .itemPedagonic p{
+
+    .itemPedagonic p {
         font-size: 16px;
         text-align: center;
     }
@@ -405,7 +425,6 @@ input::placeholder {
         width: 90%;
         height: 100px;
     }
-
 
 
     .newsNameFirst p, h1 {
@@ -474,42 +493,10 @@ input::placeholder {
         height: auto;
     }
 
-    .student {
-        padding: 0;
-    }
-
-    .student h2 {
-        font-size: 24px;
-        margin-top: 20px;
-    }
-
-    .studentImg {
-        margin-bottom: 20px;
-    }
-
-    .parentalAdvice {
-        padding: 20px;
-    }
-
-    .parentalAdvice h2 {
-        font-size: 24px;
-
-    }
-
-    .parentalAdviceImg {
-        width: 90%;
-
-    }
-
-    .parentalAdviceImg p {
-        font-size: 16px;
-
-    }
 
     .pedagogic {
         width: 90%;
         margin: auto;
-
     }
 
     .pedagogic h2 {
@@ -644,8 +631,8 @@ input::placeholder {
     }
 
     .personX {
-        width: 100%;
-        height: 180px;
+        width: 85%;
+        height: 230px;
         margin-top: 0;
     }
 
@@ -659,11 +646,13 @@ input::placeholder {
         justify-content: center;
         align-items: center;
         width: 100%;
-        padding: 0;
+        height: auto;
     }
 
     .news img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .news h2 {
@@ -676,12 +665,6 @@ input::placeholder {
         text-align: center;
     }
 
-    .event {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 
     .event h2 {
         font-size: 23px;
@@ -860,12 +843,41 @@ input::placeholder {
 
 }
 
+@media only screen and (max-width: 800px) {
+    .personX {
+        width: 90%;
+    }
+
+    .eventImg {
+        width: 95%;
+        margin: auto;
+    }
+
+    .event {
+        width: 95%;
+    }
+}
+
 @media only screen and (max-width: 550px) {
+    .studentText p{
+        font-size: 12px;
+    }
+        .studentText{
+            height: 100%;
+            padding: 8px;
+        }
+    .studentImg {
+        width: 100%;
+        height: 100%;
+
+    }
+
     .itemPedagonic div img {
         width: 90%;
 
     }
-    .itemPedagonic p{
+
+    .itemPedagonic p {
         font-size: 16px;
         text-align: center;
     }
@@ -907,7 +919,6 @@ input::placeholder {
         width: 90%;
         height: 100px;
     }
-
 
 
     .newsNameFirst p, h1 {
@@ -976,37 +987,6 @@ input::placeholder {
         height: auto;
     }
 
-    .student {
-        padding: 0;
-    }
-
-    .student h2 {
-        font-size: 24px;
-        margin-top: 20px;
-    }
-
-    .studentImg {
-        margin-bottom: 20px;
-    }
-
-    .parentalAdvice {
-        padding: 20px;
-    }
-
-    .parentalAdvice h2 {
-        font-size: 24px;
-
-    }
-
-    .parentalAdviceImg {
-        width: 90%;
-
-    }
-
-    .parentalAdviceImg p {
-        font-size: 16px;
-
-    }
 
     .pedagogic {
         width: 90%;
@@ -1179,12 +1159,12 @@ input::placeholder {
     }
 
     .event {
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 95%;
     }
+
 
     .event h2 {
         font-size: 23px;
@@ -1259,6 +1239,8 @@ input::placeholder {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        height: 160px;
+        overflow: hidden;
     }
 
     .container {
