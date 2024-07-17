@@ -378,54 +378,38 @@ input::placeholder {
         align-items: center;
     }
 
-    .itemPedagonic div img {
-        width: 90%;
 
-    }
 
     .itemPedagonic p {
         font-size: 16px;
         text-align: center;
     }
 
-    .itemPedagonic div p {
-        font-size: 16px;
-        text-align: center;
+    .itemPedagonic div img {
+        width: 100%;
     }
-
-    .itemPedagonic div {
-        width: calc(100% / 2);
-        height: auto;
-        margin-bottom: 40px;
+    .pedagogicChildrens{
+        width: 100%;
     }
-
     .itemPedagonic {
-        width: 90%;
+        width: 100%;
+        margin-top: 23px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        flex-wrap: wrap;
     }
+
+
 
     .textPedagonic p {
         font-size: 18px;
-    }
-
-    .textPedagonic {
-        height: 70px;
-        font-size: 14px;
     }
 
     .bannerText {
         font-size: 18px;
         text-align: center;
     }
-
-
-    .pedagogicText {
-        width: 90%;
-        height: 100px;
-    }
-
 
     .newsNameFirst p, h1 {
         font-size: 14px;
@@ -629,9 +613,17 @@ input::placeholder {
     .graduate h2 {
         font-size: 18px;
     }
-
+    .personImg img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+        .personImg{
+            width: 60%;
+            height: 100%;
+        }
     .personX {
-        width: 85%;
+        width: 90%;
         height: 230px;
         margin-top: 0;
     }
@@ -844,6 +836,26 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 800px) {
+    .itemPedagonic p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .itemPedagonic div img {
+        width: 100%;
+    }
+    .pedagogicChildrens{
+        width: 100%;
+
+    }
+    .itemPedagonic {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+    }
     .personX {
         width: 90%;
     }
@@ -855,10 +867,12 @@ input::placeholder {
 
     .event {
         width: 95%;
+        margin: auto;
     }
 }
 
 @media only screen and (max-width: 550px) {
+
     .studentText p{
         font-size: 12px;
     }
@@ -1124,15 +1138,17 @@ input::placeholder {
     .graduate h2 {
         font-size: 18px;
     }
-
+    .personImg{
+        width: 50%;
+    }
     .personX {
-        width: 100%;
+        width: 90%;
         height: 180px;
         margin-top: 0;
     }
 
     .personY {
-        width: auto;
+        width: 40%;
     }
 
     .news {
@@ -1241,6 +1257,7 @@ input::placeholder {
         flex-direction: column;
         height: 160px;
         overflow: hidden;
+        width: 100%;
     }
 
     .container {

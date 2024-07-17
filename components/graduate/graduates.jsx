@@ -17,13 +17,12 @@ const Graduates = () => {
       <div className='w-auto h-auto mt-auto p-10'>
         <h2 className='text-center text-amber-900 tracking-wider animate-fade-in-up text-4xl'>Մեր շրջանավարտները</h2>
       </div>
-      <div className='w-11/12 m-auto'>
+      <div className='w-11/12 m-auto parentGraduate '>
         <div className='w-full flex flex-wrap justify-evenly childrenGraduate'>
           <Skeleton loading={isFetching} active>
-
-        {graduates?.map((item) => (
-          <Person key={item.id} isFetching={isFetching} user={item}/>
-        ))}
+            {graduates?.map((item) => (
+              <Person key={item.id} isFetching={isFetching} user={item}/>
+            ))}
           </Skeleton>
 
         </div>

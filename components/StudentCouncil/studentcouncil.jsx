@@ -29,7 +29,7 @@ const Student = () => {
               className="w-full h-full object-cover image"
             />
           </div>
-          <div className="w-1/2  studentText  p-8 flex flex-col justify-center items-start space-y-4">
+          <div className="w-1/2  studentText  p-8 flex flex-col justify-center  items-start space-y-4">
             <p className="text-2xl font-bold text-purple-900">
               {student?.title}
             </p>

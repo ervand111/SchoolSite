@@ -49,7 +49,7 @@ const Id = () => {
           <p className='text-3xl'>{director?.profession}</p>
         </div>
 
-        <div className='w-11/12 h-auto m-auto mt-12 flex justify-center  items-center itemPedagonic'>
+        <div className='w-11/12 h-auto m-auto mt-12 flex justify-center  items-center'>
           <div className='w-1/3 h-80 flex  justify-center items-center '>
             <Image
               className='w-11/12 h-5/6 object-contain filter  drop-shadow-lg transition-transform transform hover:scale-105'
@@ -71,8 +71,8 @@ const Id = () => {
         <div
           className='w-11/12 h-auto m-auto flex items-center justify-center overflow-hidden rounded-lg shadow-lg'>
           {users?.filter(x => x.director_status !== 1).map((item) => (
-            <div key={item.id} className='w-full  h-auto  flex-col flex  items-center justify-center p-4'>
-              <div className='w-1/3 h-full flex itemPedagonic   justify-center items-center'>
+            <div key={item.id} className='w-full  h-auto  itemPedagonic flex-col flex  items-center justify-center p-4'>
+              <div className='w-1/3 h-full flex pedagogicChildrens  justify-center items-center'>
                 <Image
                   className='w-full h-full object-cover rounded-lg shadow-lg'
                   src={process.env.IMAGE_URL + item?.avatar}
@@ -81,7 +81,7 @@ const Id = () => {
                   height={400}
                 />
               </div>
-              <div className='w-auto h-full itemPedagonic flex justify-center items-center flex-col p-4'>
+              <div className='w-auto h-full  flex justify-center items-center flex-col p-4'>
                 <p className='text-xl  text-center font-bold mb-2'>{item?.fullname}</p>
                 <p className='text-xl text-gray-700'>{item?.profession}</p>
               </div>
