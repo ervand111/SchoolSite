@@ -225,7 +225,54 @@ input::placeholder {
     display: none;
 }
 
+.itemPedagonic1 p {
+    text-align: center;
+    font-size: 16px;
+}
+
+.itemPedagonic1 {
+    width: calc(100% / 2 - 20px);
+    height: 100%;
+
+}
+
+.pedagogicChildrens {
+    width: calc(100% / 2 - 10px);
+    height: 80%;
+}
+
+.itemPedagonic {
+    width: calc(100% / 4 - 10px);
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width: 1200px) {
+    .itemPedagonic1 p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .itemPedagonic1 {
+        width: calc(100% / 2);
+        height: 100%;
+
+    }
+
+    .pedagogicChildrens {
+        width: calc(100% / 2);
+        height: 80%;
+    }
+
+    .itemPedagonic {
+        width: calc(100% / 4);
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .footer {
         width: 100%;
         height: auto;
@@ -313,7 +360,30 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 1050px) {
+    .itemPedagonic1 p {
+        text-align: center;
+        font-size: 15px;
+    }
 
+    .itemPedagonic1 {
+        width: calc(100% / 2);
+        height: 100%;
+
+    }
+
+    .pedagogicChildrens {
+        width: calc(100% / 2);
+        height: 80%;
+    }
+
+    .itemPedagonic {
+        width:100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
     .contactTExt h2 {
         margin: 0;
         padding: 0;
@@ -362,9 +432,19 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 1000px) {
-    .studentText p{
+    .directorText p {
+        font-size: 16px;
+    }
+
+    .directorText {
+        width: 50%;
+        height: 180px;
+    }
+
+    .studentText p {
         font-size: 18px;
     }
+
     .image {
         width: 100%;
         height: 100%;
@@ -377,29 +457,6 @@ input::placeholder {
         justify-content: center;
         align-items: center;
     }
-
-
-
-    .itemPedagonic p {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .itemPedagonic div img {
-        width: 100%;
-    }
-    .pedagogicChildrens{
-        width: 100%;
-    }
-    .itemPedagonic {
-        width: 100%;
-        margin-top: 23px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
 
 
     .textPedagonic p {
@@ -613,15 +670,18 @@ input::placeholder {
     .graduate h2 {
         font-size: 18px;
     }
-    .personImg img{
+
+    .personImg img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-        .personImg{
-            width: 60%;
-            height: 100%;
-        }
+
+    .personImg {
+        width: 60%;
+        height: 100%;
+    }
+
     .personX {
         width: 90%;
         height: 230px;
@@ -630,6 +690,7 @@ input::placeholder {
 
     .personY {
         width: auto;
+
     }
 
     .news {
@@ -836,26 +897,55 @@ input::placeholder {
 }
 
 @media only screen and (max-width: 800px) {
-    .itemPedagonic p {
-        font-size: 16px;
+
+    .itemPedagonic1 p {
         text-align: center;
+        font-size: 16px;
     }
 
-    .itemPedagonic div img {
+    .itemPedagonic1 {
         width: 100%;
+        height: 100%;
     }
-    .pedagogicChildrens{
-        width: 100%;
 
-    }
-    .itemPedagonic {
+    .pedagogicChildrens {
         width: 60%;
+        height: 80%;
+    }
+
+    .itemPedagonic {
+        width:calc(100% / 2);
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        height: auto;
+        flex-direction: column
     }
+    .parentPedagogic{
+        width: 91%;
+        flex-wrap: wrap;
+
+    }
+    .directorText p {
+        font-size: 16px;
+    }
+
+    .directorText {
+        width: 50%;
+        height: 180px;
+    }
+
+    .directorImg img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .directorImg {
+        width: 50%;
+        height: 300px;
+        margin-bottom: 40px;
+    }
+
     .personX {
         width: 90%;
     }
@@ -873,46 +963,67 @@ input::placeholder {
 
 @media only screen and (max-width: 550px) {
 
-    .studentText p{
+    .itemPedagonic1 p {
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .itemPedagonic1 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pedagogicChildrens {
+        width: 60%;
+        height: 80%;
+    }
+
+    .itemPedagonic {
+        width: 50%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+    .parentPedagogic{
+        width: 92%;
+        flex-wrap: wrap;
+
+    }
+    .directorText p {
         font-size: 12px;
     }
-        .studentText{
-            height: 100%;
-            padding: 8px;
-        }
+
+    .directorText {
+        width: 50%;
+        height: auto;
+    }
+
+    .directorImg img {
+        width: 70%;
+        height: 100%;
+    }
+
+    .directorImg {
+        width: 50%;
+    }
+
+    .studentText p {
+        font-size: 12px;
+    }
+
+    .studentText {
+        height: 100%;
+        padding: 8px;
+    }
+
     .studentImg {
         width: 100%;
         height: 100%;
 
     }
 
-    .itemPedagonic div img {
-        width: 90%;
-
-    }
-
-    .itemPedagonic p {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .itemPedagonic div p {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .itemPedagonic div {
-        width: calc(100% / 2);
-        height: auto;
-        margin-bottom: 40px;
-    }
-
-    .itemPedagonic {
-        width: 90%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
 
     .textPedagonic p {
         font-size: 18px;
@@ -1138,17 +1249,25 @@ input::placeholder {
     .graduate h2 {
         font-size: 18px;
     }
-    .personImg{
+
+    .personImg {
         width: 50%;
     }
+
     .personX {
-        width: 90%;
+        width: 100%;
         height: 180px;
         margin-top: 0;
     }
 
+    .personY p {
+        font-size: 13px;
+        display: inline;
+        text-align: start;
+    }
+
     .personY {
-        width: 40%;
+        width: 50%;
     }
 
     .news {

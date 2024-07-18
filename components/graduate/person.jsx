@@ -9,7 +9,7 @@ const Person = ({ user }) => {
         <Image width={1000} height={1000} className='w-full h-full object-cover rounded-2xl' src={process.env.IMAGE_URL+user?.avatar} alt={'graduates'}/>
       </div>
       <div className="w-3/5 h-auto flex flex-col justify-center personY">
-        <h1 className='text-lg ml-5 font-bold text-left mb-4'>{user?.fullname}</h1>
+        <p className='text-lg ml-5 font-bold text-left mb-4'>{user?.fullname}</p>
         <p className='text-lg ml-5 text-left'>{user?.profession}</p>
       </div>
     </div>

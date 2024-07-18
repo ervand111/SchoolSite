@@ -42,7 +42,7 @@ const Contact = () => {
             <PhoneOutlined className='text-5xl text-white'/>
           </div>
           <div className='w-full h-32 flex justify-center items-start'>
-            <p className=' text-center text-1xl text-white'>Տնօրեն` +374-10-540010 ՈՒսուցչանոց` +374-10-541562</p>
+            <p className=' text-center text-1xl text-white'>Տնօրեն` +374-10-540010 Ուսուցչանոց` +374-10-541562</p>
           </div>
         </div>
         <div

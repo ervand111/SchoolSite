@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
-import {data} from "@/utility/db";
 import App from "@/components/layouts/app";
 import Banner from "@/components/banner/banner";
 import Image from "next/image";
-import pedagogic from "@/components/pedagogic/pedagogic";
-import {getNewsById} from "@/store/news/actions";
 import {getUserWithPedagogic} from "@/store/user/actions";
 import {useDispatch, useSelector} from "react-redux";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
@@ -24,15 +21,18 @@ const Id = () => {
   }, [dispatch, id]);
 
   useEffect(() => {
-    setDirector(users?.find(x => x.director_status === 1));
-  }, [users])
+    if (users) {
+      setDirector(users?.find((x) => x.director_status === 1));
+    }
+  }, [users]);
+
   const pedagogic = useSelector(state => state?.pedagogic?.pedagogic)
   useEffect(() => {
     dispatch(getPedagogic.request());
   }, [dispatch]);
 
   useEffect(() => {
-    setTitle(pedagogic.filter(x => x.id == id)[0])
+    setTitle(pedagogic?.filter(x => x.id == id)[0])
   }, [id, pedagogic])
   return (
     <div>
@@ -50,16 +50,16 @@ const Id = () => {
         </div>
 
         <div className='w-11/12 h-auto m-auto mt-12 flex justify-center  items-center'>
-          <div className='w-1/3 h-80 flex  justify-center items-center '>
+          <div className='w-1/3 h-80 flex directorImg justify-center items-center '>
             <Image
               className='w-11/12 h-5/6 object-contain filter  drop-shadow-lg transition-transform transform hover:scale-105'
-              src={process.env.IMAGE_URL + director?.avatar}
+              src={process?.env.IMAGE_URL + director?.avatar}
               width={1000}
               height={1000}
               alt={pedagogic}
             />
           </div>
-          <div className='w-1/3 h-44 flex justify-center items-center flex-col rounded-lg shadow-2xl p-4'>
+          <div className='w-1/3 h-44 flex directorText justify-center items-center flex-col rounded-lg shadow-2xl p-4'>
             <p className='text-2xl font-bold mb-2'>{director?.fullname}</p>
           </div>
         </div>
@@ -68,22 +68,21 @@ const Id = () => {
           <p className='text-3xl'>Անդամներ</p>
         </div>
 
-        <div
-          className='w-11/12 h-auto m-auto flex items-center justify-center overflow-hidden rounded-lg shadow-lg'>
+        <div className='w-11/12 h-auto parentPedagogic m-auto flex  items-center justify-around  rounded-lg shadow-lg'>
           {users?.filter(x => x.director_status !== 1).map((item) => (
-            <div key={item.id} className='w-full  h-auto  itemPedagonic flex-col flex  items-center justify-center p-4'>
+            <div key={item.id} className='itemPedagonic  p-4'>
               <div className='w-1/3 h-full flex pedagogicChildrens  justify-center items-center'>
                 <Image
                   className='w-full h-full object-cover rounded-lg shadow-lg'
-                  src={process.env.IMAGE_URL + item?.avatar}
+                  src={process?.env.IMAGE_URL + item?.avatar}
                   alt={pedagogic}
                   width={400}
                   height={400}
                 />
               </div>
-              <div className='w-auto h-full  flex justify-center items-center flex-col p-4'>
-                <p className='text-xl  text-center font-bold mb-2'>{item?.fullname}</p>
-                <p className='text-xl text-gray-700'>{item?.profession}</p>
+              <div className='w-auto h-full itemPedagonic1 flex justify-center items-center flex-col p-4'>
+                <p className=' text-center font-bold mb-2'>{item?.fullname}</p>
+                <p className='text-gray-700'>{item?.profession}</p>
               </div>
             </div>
           ))}
