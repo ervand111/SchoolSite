@@ -11,12 +11,17 @@ import Link from "next/link";
 import {FacebookIcon, FacebookShareButton} from "react-share";
 
 const Name = () => {
+
+
   const router = useRouter();
   const {name} = router.query;
   const dispatch = useDispatch();
   const news = useSelector((state) => state?.news?.selectedNews);
   const randNews = useSelector((state) => state?.news?.news);
   const isFetching = useSelector((state) => state?.news?.isFetching);
+  const pageUrl = name ? `https://www.182dproc.am/news/${name}` : 'https://www.182dproc.am/news/default';
+
+
   useEffect(() => {
     dispatch(getNewsById.request({id: name}));
     dispatch(getRandNews.request());
@@ -28,18 +33,20 @@ const Name = () => {
       <Skeleton loading={isFetching} active>
         <Head>
           <title>{news?.title}</title>
-          <meta name="description" content={trimmedContent}/>
-          <meta property="og:title" content={news?.title}/>
-          <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar}/>
-          <meta property="og:url" content={`https://www.182dproc.am/news/${name}`}/>
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta property="og:description" content={trimmedContent}/>
-          <meta charSet="UTF-8"/>
+          <meta name="description" content={trimmedContent} />
+          <meta property="og:title" content={news?.title} />
+          <meta property="og:image" content={process.env.IMAGE_URL + (news?.avatar || "/path/to/fallback-image.jpg")} />
+          <meta property="og:url" content={pageUrl} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="og:description" content={trimmedContent} />
+          <meta charSet="UTF-8" />
         </Head>
       </Skeleton>
+
+
       <App>
         <div className='w-11/12 h-max  justify-between flex m-auto  newsName '>
-          <div className='w-2/3 h-max newsNameFirst '>
+        <div className='w-2/3 h-max newsNameFirst '>
             <Skeleton loading={isFetching} active>
               <div className='w-11/12 m-auto mt-6 mb-10'>
                 <p className='text-xl italic'>13/06/2024</p>
