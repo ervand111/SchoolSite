@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import Head from "next/head";
 import Image from "next/image";
 import SmallItem from "@/components/news/smallitem";
 import App from "@/components/layouts/app";
@@ -7,6 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getNewsById, getRandNews} from "@/store/news/actions";
 import {Skeleton} from "antd";
 import Link from "next/link";
+import {FacebookIcon, FacebookShareButton} from "react-share";
 
 const Name = () => {
   const router = useRouter();
@@ -19,12 +21,23 @@ const Name = () => {
     dispatch(getNewsById.request({id: name}));
     dispatch(getRandNews.request());
   }, [dispatch, name]);
+  const trimmedContent = news?.content ? news.content.substring(0, 150) + "..." : "";
 
   return (
-    <div>
+    <>
+      <Head>
+        <title>{news?.title}</title>
+        <meta name="description" content={trimmedContent}/>
+        <meta property="og:title" content={news?.title}/>
+        <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar}/>
+        <meta property="og:url" content={`https://www.182dproc.am/news/${name}`}/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="og:description" content={trimmedContent}/>
+        <meta charSet="UTF-8"/>
+      </Head>
       <App>
-        <div className='w-11/12 h-auto  justify-between flex m-auto  newsName '>
-          <div className='w-2/3 h-auto newsNameFirst '>
+        <div className='w-11/12 h-max  justify-between flex m-auto  newsName '>
+          <div className='w-2/3 h-max newsNameFirst '>
             <Skeleton loading={isFetching} active>
               <div className='w-11/12 m-auto mt-6 mb-10'>
                 <p className='text-xl italic'>13/06/2024</p>
@@ -40,6 +53,14 @@ const Name = () => {
               <div className='w-11/12 m-auto h-auto mt-6'>
                 <p dangerouslySetInnerHTML={{__html: news?.content}}></p>
               </div>
+              <div className="w-11/12 mt-6 ml-10 mb-10">
+                <FacebookShareButton
+                  url={`https://www.182dproc.am/news/${name}`}
+                  quote={news?.title}
+                >
+                  <FacebookIcon size={32} round={true}/>
+                </FacebookShareButton>
+              </div>
             </Skeleton>
           </div>
           <div className=' pl-10 w-2/6 h-auto smallItem'>
@@ -51,7 +72,7 @@ const Name = () => {
               <>
                 {randNews?.map((item) => (
                   <Link key={item.id} href={`/news/${item.id}`}>
-                    <SmallItem item={item} />
+                    <SmallItem item={item}/>
                   </Link>
                 ))}
               </>
@@ -59,7 +80,7 @@ const Name = () => {
           </div>
         </div>
       </App>
-    </div>
+    </>
   );
 };
 
