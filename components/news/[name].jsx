@@ -10,6 +10,7 @@ import {Skeleton} from "antd";
 import Link from "next/link";
 import {FacebookIcon, FacebookShareButton} from "react-share";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
+import { Helmet } from 'react-helmet';
 
 const Name = () => {
 
@@ -20,9 +21,10 @@ const Name = () => {
   const news = useSelector((state) => state?.news?.selectedNews);
   const randNews = useSelector((state) => state?.news?.news);
   const isFetching = useSelector((state) => state?.news?.isFetching);
-  const pageUrl = name ? `https://www.182dproc.am/news/${name}` : 'https://www.182dproc.am/news/default';
-  const imageUrl = news?.avatar ? process?.env.IMAGE_URL + news.avatar : "/path/to/fallback-image.jpg";
-
+  const pageUrl = `https://www.182dproc.am/news/${name}`
+  const imageUrl = news?.avatar
+    ? `${process.env.IMAGE_URL}${news.avatar}`
+    : "https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp";
 
   useEffect(() => {
     dispatch(getNewsById.request({id: name}));
@@ -32,23 +34,18 @@ const Name = () => {
 
   return (
     <>
-      <Skeleton loading={isFetching} active>
-        <Head>
-          <title>{news?.title}</title>
-          <meta name="description" content={trimmedContent}/>
-          <meta property="og:title" content={news?.title}/>
-          <meta property="og:url" content={pageUrl}/>
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta property="og:description" content={trimmedContent}/>
-          <meta property="og:image" content={imageUrl}/>
-          <meta charSet="UTF-8"/>
-        </Head>
-      </Skeleton>
-
-
       <App>
+        <Helmet>
+          <meta property="og:title" content={news?.title}/>
+          <meta property="og:description" content={news?.description || 'Default description'}/>
+          <meta property="og:image" content={imageUrl}/>
+          <meta property="og:url" content={`https://182school.geeklab.am/storage/news/August2024/AW3WviGeSDxTkbG3evtf.jpeg`}/>
+          <meta property="og:type" content="website"/>
+        </Helmet>
+        <h1>{imageUrl}</h1>
+
         <div className='w-11/12 h-max  justify-between flex m-auto  newsName '>
-        <div className='w-2/3 h-max newsNameFirst '>
+          <div className='w-2/3 h-max newsNameFirst '>
             <Skeleton loading={isFetching} active>
               <div className='w-11/12 m-auto mt-6 mb-10'>
                 <p className='text-xl italic'>13/06/2024</p>
@@ -68,6 +65,7 @@ const Name = () => {
                 <FacebookShareButton
                   url={`https://www.182dproc.am/news/${name}`}
                   quote={news?.title}
+                  hashtag={'#kd'}
                 >
                   <FacebookIcon size={32} round={true}/>
                 </FacebookShareButton>
