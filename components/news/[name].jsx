@@ -1,42 +1,45 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import SmallItem from '@/components/news/smallitem';
 import App from '@/components/layouts/app';
-import { useRouter } from 'next/router';
-import { useDispatch, useSelector } from 'react-redux';
-import { getNewsById, getRandNews } from '@/store/news/actions';
-import { Skeleton } from 'antd';
+import {useRouter} from 'next/router';
+import {useDispatch, useSelector} from 'react-redux';
+import {getNewsById, getRandNews} from '@/store/news/actions';
+import {Skeleton} from 'antd';
 import Link from 'next/link';
-import { FacebookIcon, FacebookShareButton } from 'react-share';
+import {FacebookIcon, FacebookShareButton} from 'react-share';
 
 const Name = () => {
   const router = useRouter();
-  const { name } = router.query;
+  const {name} = router.query;
   const dispatch = useDispatch();
   const news = useSelector((state) => state?.news?.selectedNews);
   const randNews = useSelector((state) => state?.news?.news);
   const isFetching = useSelector((state) => state?.news?.isFetching);
   const pageUrl = `https://www.182dproc.am/news/${name}`;
-  const imageUrl = news?.avatar
-    ? `${process.env.IMAGE_URL}${news.avatar}`
-    : 'https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp';
 
   useEffect(() => {
-    dispatch(getNewsById.request({ id: name }));
+    dispatch(getNewsById.request({id: name}));
     dispatch(getRandNews.request());
   }, [dispatch, name]);
 
   const trimmedContent = news?.content ? news.content.substring(0, 150) + '...' : '';
+  if (!news?.avatar && !news?.title) {
+    return (
+      <>
+      <h1>ok</h1></>
+    )
+  }
 
   return (
     <>
       <Head>
-        <meta property="og:title" content={news?.title || 'Default Title'} />
-        <meta property="og:description" content={trimmedContent || 'Default description'} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="article" />
+        <meta property="og:title" content={news.title}/>
+        <meta property="og:description" content={trimmedContent}/>
+        <meta property="og:image" content={process.env.IMAGE_URL+news.avatar}/>
+        <meta property="og:url" content={pageUrl}/>
+        <meta property="og:type" content="article"/>
       </Head>
       <App>
         <div className='w-11/12 h-max justify-between flex m-auto newsName'>
@@ -58,16 +61,20 @@ const Name = () => {
                 />
               </div>
               <div className='w-11/12 m-auto h-auto mt-6'>
-                <p dangerouslySetInnerHTML={{ __html: news?.content }}></p>
+                <p dangerouslySetInnerHTML={{__html: news?.content}}></p>
               </div>
               <div className="w-11/12 mt-6 ml-10 mb-10">
-                <FacebookShareButton
-                  url={pageUrl}
-                  quote={news?.title}
-                  hashtag={'#kd'}
-                >
-                  <FacebookIcon size={32} round={true} />
-                </FacebookShareButton>
+                {news?.title && (
+                  <div className="w-11/12 mt-6 ml-10 mb-10">
+                    <FacebookShareButton
+                      url={pageUrl}
+                      quote={news?.title}
+                      hashtag={'#kd'}
+                    >
+                      <FacebookIcon size={32} round={true}/>
+                    </FacebookShareButton>
+                  </div>
+                )}
               </div>
             </Skeleton>
           </div>
@@ -79,7 +86,7 @@ const Name = () => {
               <>
                 {randNews?.map((item) => (
                   <Link key={item.id} href={`/news/${item.id}`}>
-                    <SmallItem item={item} />
+                    <SmallItem item={item}/>
                   </Link>
                 ))}
               </>
