@@ -25,16 +25,18 @@ const Name = () => {
 
   return (
     <>
-      <Head>
-        <title>{news?.title}</title>
-        <meta name="description" content={trimmedContent}/>
-        <meta property="og:title" content={news?.title}/>
-        <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar}/>
-        <meta property="og:url" content={`https://www.182dproc.am/news/${name}`}/>
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta property="og:description" content={trimmedContent}/>
-        <meta charSet="UTF-8"/>
-      </Head>
+      <Skeleton loading={isFetching} active>
+        <Head>
+          <title>{news?.title}</title>
+          <meta name="description" content={trimmedContent}/>
+          <meta property="og:title" content={news?.title}/>
+          <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar}/>
+          <meta property="og:url" content={`https://www.182dproc.am/news/${name}`}/>
+          <meta name="twitter:card" content="summary_large_image"/>
+          <meta property="og:description" content={trimmedContent}/>
+          <meta charSet="UTF-8"/>
+        </Head>
+      </Skeleton>
       <App>
         <div className='w-11/12 h-max  justify-between flex m-auto  newsName '>
           <div className='w-2/3 h-max newsNameFirst '>
