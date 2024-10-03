@@ -19,7 +19,7 @@
     "react-helmet": "^6.1.0",
     "react-redux": "^8.1.1",
     "react-responsive-carousel": "^3.2.23",
-    "react-share": "^5.1.0",
+    "next-share": "^0.20.0",
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.30.2",
     "redux": "^4.2.1",
