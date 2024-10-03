@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
-import {getPedagogic} from "@/store/pedagogic/actions";
+import {getPedagogic} from "../../store/pedagogic/actions";
 
 const Pedagogic = () => {
   const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import React from 'react';
-import ParentalAdvice from "@/components/parentalAdvice/parentaladvice";
+import ParentalAdvice from "../../components/parentalAdvice/parentaladvice";
 
 const Index = () => {
   return (

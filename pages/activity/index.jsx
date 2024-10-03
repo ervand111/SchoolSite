@@ -1,5 +1,5 @@
 import React from 'react';
-import Activity from "@/components/activity/activity";
+import Activity from "../../components/activity/activity";
 
 const Index = () => {
   return (

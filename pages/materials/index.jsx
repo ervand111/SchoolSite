@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import Link from "next/link";
 import {useDispatch, useSelector} from "react-redux";
-import {getDocuments} from "@/store/documents/actions";
+import {getDocuments} from "../../store/documents/actions";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 import {Skeleton} from "antd";
 

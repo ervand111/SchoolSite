@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import Image from "next/image";
 import {useDispatch, useSelector} from "react-redux";
-import {getStuff} from "@/store/stuff/actions";
+import {getStuff} from "../../store/stuff/actions";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
 
 

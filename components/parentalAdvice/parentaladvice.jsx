@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import Image from "next/image";
 import {useDispatch, useSelector} from "react-redux";
-import {getAdvice} from "@/store/advices/actions";
+import {getAdvice} from "../../store/advices/actions";
 
 const ParentalAdvice = () => {
   const dispatch = useDispatch();

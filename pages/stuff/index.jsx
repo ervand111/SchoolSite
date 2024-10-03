@@ -1,5 +1,5 @@
 import React from 'react';
-import Stuff from "@/components/stuff/stuff";
+import Stuff from "../../components/stuff/stuff";
 
 const Index = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import Student from "@/components/StudentCouncil/studentcouncil";
-import App from "@/components/layouts/app";
+import Student from "../../components/StudentCouncil/studentcouncil";
+import App from "../../components/layouts/app";
 
 const Index = () => {
   return (

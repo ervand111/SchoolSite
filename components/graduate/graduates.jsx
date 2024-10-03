@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import Person from "@/components/graduate/person";
+import Person from "../../components/graduate/person";
 import {useDispatch, useSelector} from "react-redux";
-import {getGraduates} from "@/store/graduates/actions";
+import {getGraduates} from "../../store/graduates/actions";
 import {Skeleton} from "antd";
 
 const Graduates = () => {

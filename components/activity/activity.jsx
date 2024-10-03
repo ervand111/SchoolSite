@@ -1,5 +1,5 @@
 import React from 'react';
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 
 const Activity = () => {
   return (

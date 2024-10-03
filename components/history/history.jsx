@@ -1,5 +1,5 @@
 import React from 'react';
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import Image from "next/image";
 
 const History = () => {

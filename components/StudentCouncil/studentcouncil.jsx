@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import Image from "next/image";
 import {useDispatch, useSelector} from "react-redux";
-import {getAdvice} from "@/store/advices/actions";
+import {getAdvice} from "../../store/advices/actions";
 
 const Student = () => {
   const dispatch = useDispatch();

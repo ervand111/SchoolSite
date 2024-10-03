@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import {useRouter} from "next/router";
 import {useDispatch, useSelector} from "react-redux";
-import {getEvent, getRandEvents} from "@/store/events/actions";
+import {getEvent, getRandEvents} from "../../store/events/actions";
 import Link from "next/link";
-import SmallItem from "@/components/events/smallItem";
+import SmallItem from "../../components/events/smallItem";
 import {Skeleton} from "antd";
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import Image from "next/image";
 
 const Details = () => {

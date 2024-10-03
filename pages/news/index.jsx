@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import App from "@/components/layouts/app";
-import Item from "@/components/news/item";
+import App from "../../components/layouts/app";
+import Item from "../../components/news/item";
 import {useDispatch, useSelector} from "react-redux";
-import {getLastNews, getNews} from "@/store/news/actions";
+import {getLastNews, getNews} from "../../store/news/actions";
 import {Skeleton} from "antd";
 
 const Index = () => {

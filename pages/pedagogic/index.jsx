@@ -1,5 +1,5 @@
 import React from 'react';
-import Pedagogic from "@/components/pedagogic/pedagogic";
+import Pedagogic from "../../components/pedagogic/pedagogic";
 
 const Index = () => {
   return (

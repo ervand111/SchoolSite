@@ -1,7 +1,7 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slider from "react-slick";
-import Item from "@/components/events/item";
+import Item from "../../components/events/item";
 const Event = (props) => {
   const settings = {
     dots: true,

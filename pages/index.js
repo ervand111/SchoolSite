@@ -1,17 +1,17 @@
-import Header from "@/components/header-footer/header";
-import Footer from "@/components/header-footer/footer";
-import CarouselComponent from "@/components/carousel/CarouselComponent";
+import Header from "../components/header-footer/header";
+import Footer from "../components/header-footer/footer";
+import CarouselComponent from "../components/carousel/CarouselComponent";
 import React, {useEffect} from "react";
-import Event from "@/components/events/event";
-import Discover from "@/components/discover/discover";
-import Contact from "@/components/contact/contact";
-import Running from "@/components/runningline/runningline";
-import News from "@/components/news/news";
+import Event from "../components/events/event";
+import Discover from "../components/discover/discover";
+import Contact from "../components/contact/contact";
+import Running from "../components/runningline/runningline";
+import News from "../components/news/news";
 import {useDispatch, useSelector} from "react-redux";
-import {getSlides} from "@/store/slides/actions";
-import {getEvents} from "@/store/events/actions";
-import {getLastNews, getNews} from "@/store/news/actions";
-import {getBrands} from "@/store/brands/actions";
+import {getSlides} from "../store/slides/actions";
+import {getEvents} from "../store/events/actions";
+import {getLastNews, getNews} from "../store/news/actions";
+import {getBrands} from "../store/brands/actions";
 
 export default function Home() {
 

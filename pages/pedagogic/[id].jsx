@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
-import App from "@/components/layouts/app";
-import Banner from "@/components/banner/banner";
+import App from "../../components/layouts/app";
+import Banner from "../../components/banner/banner";
 import Image from "next/image";
-import {getUserWithPedagogic} from "@/store/user/actions";
+import {getUserWithPedagogic} from "../../store/user/actions";
 import {useDispatch, useSelector} from "react-redux";
 import process from "next/dist/build/webpack/loaders/resolve-url-loader/lib/postcss";
-import {getPedagogic} from "@/store/pedagogic/actions";
+import {getPedagogic} from "../../store/pedagogic/actions";
 
 const Id = () => {
   const [info, setInfo] = useState({})

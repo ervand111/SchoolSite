@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Image from "next/image";
-import App from "@/components/layouts/app";
+import App from "../../components/layouts/app";
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import {Skeleton} from "antd";

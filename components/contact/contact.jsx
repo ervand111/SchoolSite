@@ -2,7 +2,7 @@ import React from 'react';
 import {EnvironmentOutlined, PhoneOutlined, ClockCircleOutlined} from "@ant-design/icons";
 import {Button, Input, Form, message} from "antd";
 import Image from "next/image";
-import {addContact} from "@/store/contact/actions";
+import {addContact} from "../../store/contact/actions";
 import {useDispatch} from "react-redux";
 
 const Contact = () => {

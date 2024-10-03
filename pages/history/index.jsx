@@ -1,5 +1,5 @@
 import React from 'react';
-import History from "@/components/history/history";
+import History from "../../components/history/history";
 
 const Index = () => {
   return (
