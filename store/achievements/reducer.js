@@ -3,7 +3,6 @@ import {
   getAchievement,
   getAchievements, getRandAchievement, getRandAchievements,
 } from './actions';
-import {getEvent} from "@/store/events/actions";
 
 const initialState = {
   achievements: [],

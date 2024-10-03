@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {categories, icons} from "@/utility/db";
+import {categories, icons} from "../../utility/db";
 import {CaretRightOutlined} from "@ant-design/icons";
 import Link from "next/link";
 import {Menu, Dropdown, Button, Drawer} from 'antd';

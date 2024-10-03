@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import SmallItem from '@/components/news/smallitem';
-import App from '@/components/layouts/app';
+import SmallItem from '../../components/news/smallitem';
+import App from '../../components/layouts/app';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNewsById, getRandNews } from '@/store/news/actions';

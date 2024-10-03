@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import SmallItem from '@/components/news/smallitem';
-import App from '@/components/layouts/app';
+import SmallItem from '../../components/news/smallitem';
+import App from '../../components/layouts/app';
 import {useRouter} from 'next/router';
 import {useDispatch, useSelector} from 'react-redux';
-import {getNewsById, getRandNews} from '@/store/news/actions';
+import {getNewsById, getRandNews} from '../../store/news/actions';
 import {Skeleton} from 'antd';
+import {
+  FacebookShareButton,
+  FacebookIcon,
+} from 'next-share'
 import Link from 'next/link';
-import {FacebookIcon, FacebookShareButton} from 'next-share';
-
 const Name = () => {
   const router = useRouter();
   const {name} = router.query;
@@ -60,18 +62,19 @@ const Name = () => {
   return (
     <>
       <Head>
-        <meta property="og:title" content={news?.title || 'Default Title'} />
-        <meta property="og:description" content={trimmedContent || 'Default description'} />
-        <meta property="og:image" content={base64Image || 'https://example.com/default-image.png'} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:url" content={pageUrl} />
-        <meta property="og:type" content="article" />
+        <meta property="og:image" content="https://avatars.githubusercontent.com/u/69414757?s=280&amp;v=4"/>
+        <meta property="og:image:alt"
+              content="A social share buttons plugin for Next.js, Create React App, Gatsby.js as well as React apps. - next-share"/>
+        <meta property="og:url" content="https://github.com/next-share"/>
+        <meta property="og:description"
+              content="A social share buttons plugin for Next.js, Create React App, Gatsby.js as well as React apps. - next-share"/>
+        <meta property="og:type" content="article"/>
+        <meta name="hostname" content="github.com"/>
       </Head>
       <App>
         <div className='w-11/12 h-max justify-between flex m-auto newsName'>
           <div className='w-2/3 h-max newsNameFirst'>
-            <Skeleton loading={isFetching} active>
+          <Skeleton loading={isFetching} active>
               <div className='w-11/12 m-auto mt-6 mb-10'>
                 <p className='text-xl italic'>13/06/2024</p>
               </div>
@@ -95,11 +98,11 @@ const Name = () => {
                 {news?.title && (
                   <div className="w-11/12 mt-6 ml-10 mb-10">
                     <FacebookShareButton
-                      url={pageUrl}
-                      quote={news?.title}
-                      media={base64Image} // Use the Base64 image here
+                      url={'https://github.com/next-share'}
+                      quote={'next-share is a social share buttons for your next React apps.'}
+                      hashtag={'#nextshare'}
                     >
-                      <FacebookIcon size={32} round={true}/>
+                      <FacebookIcon size={32} round />
                     </FacebookShareButton>
                   </div>
                 )}

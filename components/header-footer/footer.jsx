@@ -1,5 +1,5 @@
 import React from 'react';
-import {categories} from "@/utility/db";
+import {categories} from "../../utility/db";
 import Link from "next/link";
 
 const Footer = () => {
