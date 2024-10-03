@@ -62,7 +62,7 @@ const Name = () => {
       <Head>
         <meta property="og:title" content={news?.title || 'Default Title'} />
         <meta property="og:description" content={trimmedContent || 'Default description'} />
-        <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar || 'https://example.com/default-image.png'} />
+        <meta property="og:image" content={base64Image || 'https://example.com/default-image.png'} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content={pageUrl} />
