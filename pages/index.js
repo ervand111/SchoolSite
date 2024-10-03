@@ -3,7 +3,6 @@ import Footer from "@/components/header-footer/footer";
 import CarouselComponent from "@/components/carousel/CarouselComponent";
 import React, {useEffect} from "react";
 import Event from "@/components/events/event";
-import {news, events, carouselComponents, brands} from "@/utility/db";
 import Discover from "@/components/discover/discover";
 import Contact from "@/components/contact/contact";
 import Running from "@/components/runningline/runningline";
