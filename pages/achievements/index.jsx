@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import App from "@/components/layouts/app";
-import EventItem from "@/components/events/eventItem";
+import EventItem from "../../components/events/eventItem";
 import {useDispatch, useSelector} from "react-redux";
-import {getAchievements} from "@/store/achievements/actions";
+import {getAchievements} from "../../store/achievements/actions";
 import {Skeleton} from "antd";
 
 const Index = () => {

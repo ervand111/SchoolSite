@@ -4,8 +4,8 @@ import App from "@/components/layouts/app";
 import {useDispatch, useSelector} from "react-redux";
 import {useRouter} from "next/router";
 import {Skeleton} from "antd";
-import {getAchievement, getRandAchievements} from "@/store/achievements/actions";
-import SmallItem from "@/components/achievements/smallItem";
+import {getAchievement, getRandAchievements} from "../../store/achievements/actions";
+import SmallItem from "../../components/achievements/smallItem";
 
 const Name = () => {
   const router = useRouter();

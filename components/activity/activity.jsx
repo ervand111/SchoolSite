@@ -1,7 +1,5 @@
 import React from 'react';
 import App from "@/components/layouts/app";
-import { events } from "@/utility/db";
-import EventItem from "@/components/events/eventItem";
 
 const Activity = () => {
   return (

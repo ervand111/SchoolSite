@@ -98,9 +98,9 @@ const Name = () => {
                 {news?.title && (
                   <div className="w-11/12 mt-6 ml-10 mb-10">
                     <FacebookShareButton
-                      url={'https://github.com/next-share'}
-                      quote={'next-share is a social share buttons for your next React apps.'}
-                      hashtag={'#nextshare'}
+                      url={'https://www.182dproc.am/news/18'}
+                      quote={'111next-share is a social share buttons for your next React apps.'}
+                      hashtag={'#nextshare11'}
                     >
                       <FacebookIcon size={32} round />
                     </FacebookShareButton>
