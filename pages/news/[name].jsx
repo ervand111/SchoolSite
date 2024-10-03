@@ -1,4 +1,3 @@
-"use client"
 import React, {useEffect, useState} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -61,11 +60,13 @@ const Name = () => {
   return (
     <>
       <Head>
-        <meta property="og:title" content={news?.title || 'Default Title'}/>
-        <meta property="og:description" content={trimmedContent}/>
-        <meta property="og:image" content={base64Image || ''}/>
-        <meta property="og:url" content={pageUrl}/>
-        <meta property="og:type" content="article"/>
+        <meta property="og:title" content={news?.title || 'Default Title'} />
+        <meta property="og:description" content={trimmedContent || 'Default description'} />
+        <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar || 'https://example.com/default-image.png'} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="article" />
       </Head>
       <App>
         <div className='w-11/12 h-max justify-between flex m-auto newsName'>
