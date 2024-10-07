@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
+import React, { useEffect } from 'react';
 import Image from 'next/image';
 import SmallItem from '../../components/news/smallitem';
 import App from '../../components/layouts/app';
@@ -8,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getNewsById, getRandNews } from '../../store/news/actions';
 import { Skeleton } from 'antd';
 import Link from 'next/link';
-import { FacebookFilled } from "@ant-design/icons";
+
 
 const Name = () => {
   const router = useRouter();
@@ -25,28 +24,12 @@ const Name = () => {
     }
   }, [dispatch, name]);
 
-  const handleFacebookShare = () => {
-    const url = `https://www.182dproc.am/news/${name}`;
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-    window.open(facebookShareUrl, '_blank', 'width=600,height=400');
-  };
-
-
   if (!news?.title) {
     return <Skeleton loading={isFetching} active />;
   }
 
   return (
     <>
-      <Head>
-        <meta property="og:title" content={news?.title || 'News Article'} />
-        <meta property="og:description" content={news?.content?.substring(0, 150) || 'Read this amazing article!'} />
-        <meta property="og:image" content={process.env.IMAGE_URL + news?.avatar || '/default_image.jpg'} />
-        <meta property="og:url" content={`https://yourdomain.com/news/${name}`} />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Your Website Name" />
-      </Head>
-
       <App>
         <div className='w-11/12 h-max justify-between flex m-auto newsName'>
           <div className='w-2/3 h-max newsNameFirst'>
@@ -66,16 +49,10 @@ const Name = () => {
                   height={1000}
                 />
               </div>
-              <div className='w-11/12 m-auto h-auto mt-6'>
+              <div className='w-11/12 m-auto h-auto mt-6 mb-20'>
                 <p dangerouslySetInnerHTML={{ __html: news?.content }}></p>
               </div>
-              <div className='w-1/3 h-20 m-3'>
-                {/* Facebook Share Button */}
-                <button onClick={handleFacebookShare} className='text-2xl'>
-                  <FacebookFilled style={{ color: '#3b5998' }} />
-                  <span className="ml-2">Share on Facebook</span>
-                </button>
-              </div>
+
             </Skeleton>
           </div>
 
