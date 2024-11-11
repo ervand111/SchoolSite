@@ -31,7 +31,10 @@ const Details = () => {
             <div className='w-2/3 h-auto newsNameFirst '>
               <Skeleton loading={isFetching} active>
                 <div className='w-11/12 m-auto mt-6 mb-10'>
-                  <p className='text-xl italic'>13/06/2024</p>
+                  <p className='text-xl italic'>
+                    {new Date(event?.created_at).toLocaleDateString("en-GB")}
+                  </p>
+
                 </div>
                 <div className='w-11/12 m-auto'>
                   <h1 className='mb-10 text-2xl '>{event?.title}</h1>
