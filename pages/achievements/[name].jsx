@@ -30,7 +30,7 @@ const Name = () => {
             <Skeleton loading={isFetching} active>
               <div className='w-11/12 m-auto mt-6 mb-10'>
                 <p className='text-xl italic'>
-                  {new Date(event?.created_at).toLocaleDateString("en-GB")}
+                  {new Date(achievement?.created_at).toLocaleDateString("en-GB")}
                 </p>
               </div>
               <div className='w-11/12 m-auto'>
