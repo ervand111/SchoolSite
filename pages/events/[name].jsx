@@ -49,6 +49,13 @@ const Details = () => {
                   <p dangerouslySetInnerHTML={{__html: event?.content}}></p>
 
                 </div>
+                <div className='flex px-5 mb-5'>
+                  {JSON.parse(event.images)?.map((image, index) => (
+                      <div key={index} className='w-1/4 h-[30] mx-2 item-image-news'>
+                        <Image src={process.env.IMAGE_URL + image} className='object-cover' alt=""/>
+                      </div>
+                  ))}
+                </div>
               </Skeleton>
             </div>
             <div className=' pl-10 w-2/6 h-auto smallItem'>

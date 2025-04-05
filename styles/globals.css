@@ -1475,3 +1475,19 @@ input::placeholder {
 
 
 }
+
+
+
+.item-gallery .ant-image{
+    height: 100%;
+}
+.item-gallery .ant-image img{
+    height: 100%;
+}
+
+.item-image-news .ant-image{
+    height: 100%;
+}
+.item-image-news .ant-image img{
+    height: 100%;
+}

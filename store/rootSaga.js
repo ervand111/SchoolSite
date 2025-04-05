@@ -12,23 +12,25 @@ import {stuffSaga} from "../store/stuff/saga";
 import {adviceSaga} from "../store/advices/saga";
 import {contactSaga} from "../store/contact/saga";
 import {studentSaga} from "../store/student/saga";
+import {gallerySaga} from "../store/gallery/saga";
 
 function* rootSaga() {
-  yield all([
-    slideSaga(),
-    eventSaga(),
-    newsSaga(),
-    brandSaga(),
-    achievementSaga(),
-    graduateSaga(),
-    documentSaga(),
-    pedagogicSaga(),
-    usersPedagogicSaga(),
-    stuffSaga(),
-    adviceSaga(),
-    contactSaga(),
-    studentSaga()
-  ]);
+    yield all([
+        slideSaga(),
+        eventSaga(),
+        newsSaga(),
+        brandSaga(),
+        achievementSaga(),
+        graduateSaga(),
+        documentSaga(),
+        pedagogicSaga(),
+        usersPedagogicSaga(),
+        stuffSaga(),
+        adviceSaga(),
+        contactSaga(),
+        studentSaga(),
+        gallerySaga()
+    ]);
 }
 
 export default rootSaga;

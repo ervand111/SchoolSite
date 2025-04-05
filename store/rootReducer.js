@@ -6,13 +6,13 @@ import brandReducer from "../store/brands/reducer";
 import achievementReducer from "../store/achievements/reducer";
 import graduateReducer from "../store/graduates/reducer";
 import documentReducer from "../store/documents/reducer";
-import {getPedagogic} from "../store/pedagogic/actions";
 import pedagogicReducer from "../store/pedagogic/reducer";
 import usersPedagogicReducer from "../store/user/reducer";
 import stuffReducer from "../store/stuff/reducer";
 import adviceReducer from "../store/advices/reducer";
 import contactReducer from "../store/contact/reducer";
 import studentReducer from "../store/student/reducer";
+import galleryReducer from "../store/gallery/reducer";
 
 
 const rootReducer = combineReducers({
@@ -28,7 +28,8 @@ const rootReducer = combineReducers({
   stuff:stuffReducer,
   advice:adviceReducer,
   contact:contactReducer,
-  student:studentReducer
+  student:studentReducer,
+  gallery:galleryReducer
 });
 
 export default rootReducer;
